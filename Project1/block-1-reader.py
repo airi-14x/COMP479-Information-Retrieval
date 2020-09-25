@@ -33,4 +33,8 @@ for reuters_file_content in solutions.block_reader(path):
     # Validating output format
     asserts.block_1_reader_validate(reuters_file_content)
     # Write results to stdout or file
+    #print("REUTERS FILE CONTENT")
+    #print(reuters_file_content)
+    #print("THIS IS PATH:")
+    #print(path)
     asserts.output(reuters_file_content)

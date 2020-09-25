@@ -13,12 +13,25 @@ for example to show what is expected to be returned. You CAN modify them accordi
 
 def block_reader(path):
     # Delete this block first
-    raise NotImplementedError("Please implement your solution in block_reader function in solutions.py")
+    #raise NotImplementedError("Please implement your solution in block_reader function in solutions.py")
     # ##############
 
+    import os
+    #print(os.listdir(path))
+
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
-    reuters_file_content = 'your file content should be here'
+    os.chdir(path) #To /reuters21578 folder
+
+    #Loop
+    f = open('reut2-000.sgm')
+    raw = f.read()
+
+    print(type(raw)) #Of type String
+
+    #reuters_file_content = 'your file content should be here'
+    reuters_file_content = raw
     yield reuters_file_content
+    #Loop
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
