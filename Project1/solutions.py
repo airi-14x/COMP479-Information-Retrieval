@@ -33,7 +33,7 @@ def block_reader(path):
 
     for file_name in sorted(os.listdir(".")):
         if file_name.endswith(".sgm"):
-            f = open(file_name,'rb')
+            f = open(file_name,'r')
             raw = f.read()
             #print(type(raw))
             #raw.decode("utf-8")
