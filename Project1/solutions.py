@@ -17,20 +17,35 @@ def block_reader(path):
     # ##############
 
     import os
-    #print(os.listdir(path))
+    print(os.listdir(path))
 
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     os.chdir(path) #To /reuters21578 folder
 
     #Loop
-    f = open('reut2-000.sgm')
-    raw = f.read()
+    # ----
+    #f = open('reut2-000.sgm')
+    #raw = f.read()
 
-    print(type(raw)) #Of type String
-
+    #print(type(raw)) #Of type String
+    # -----
     #reuters_file_content = 'your file content should be here'
-    reuters_file_content = raw
-    yield reuters_file_content
+
+    for file_name in sorted(os.listdir(".")):
+        if file_name.endswith(".sgm"):
+            f = open(file_name,'rb')
+            raw = f.read()
+            #print(type(raw))
+            #raw.decode("utf-8")
+            #print(type(raw))
+            #print(''.join(raw).decode("utf-8"))
+            reuters_file_content = raw
+            yield reuters_file_content
+        else:
+            continue
+
+    #reuters_file_content = raw
+    #yield reuters_file_content
     #Loop
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
