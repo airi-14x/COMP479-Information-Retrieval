@@ -37,8 +37,8 @@ def output(structure):
     #print(structure)
     #print("----")
     #print(type(structure))
-    print(init_params.args)
-    print(init_params.args.output_file)
+    #print(init_params.args)
+    #print(init_params.args.output_file)
     #print("----")
 
     print(json.dumps(structure), file=init_params.args.output_file)

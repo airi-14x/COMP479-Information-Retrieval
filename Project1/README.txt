@@ -42,32 +42,32 @@ Running python scripts with default functionality
 --------------------------------------------------------------------
 python3 ./block-1-reader.py --path reuters21578
 python3 ./block-1-reader.py --path reuters21578 | python3 ./block-2-document-segmenter.py
-python ./block-1-reader.py --path reuters21578 | python3 ./block-2-document-segmenter.py | python3 ./block-3-extractor.py
-python ./block-1-reader.py --path <Reuters folder path> | python ./block-2-document-segmenter.py | python ./block-3-extractor.py | python ./block-4-tokenizer.py
-python ./block-1-reader.py --path <Reuters folder path> | python ./block-2-document-segmenter.py | python ./block-3-extractor.py | python ./block-4-tokenizer.py | python ./block-5-stemmer.py
-python ./block-1-reader.py --path <Reuters folder path> | python ./block-2-document-segmenter.py | python ./block-3-extractor.py | python ./block-4-tokenizer.py | python ./block-5-stemmer.py | python ./block-6-stopwords-removal.py
+python3 ./block-1-reader.py --path reuters21578 | python3 ./block-2-document-segmenter.py | python3 ./block-3-extractor.py
+python3 ./block-1-reader.py --path reuters21578 | python3 ./block-2-document-segmenter.py | python3 ./block-3-extractor.py | python3 ./block-4-tokenizer.py
+python3 ./block-1-reader.py --path reuters21578 | python3 ./block-2-document-segmenter.py | python3 ./block-3-extractor.py | python3 ./block-4-tokenizer.py | python3 ./block-5-stemmer.py
+python3 ./block-1-reader.py --path reuters21578 | python3 ./block-2-document-segmenter.py | python3 ./block-3-extractor.py | python3 ./block-4-tokenizer.py | python3 ./block-5-stemmer.py | python3 ./block-6-stopwords-removal.py
 
 
 Running python scripts to save intermediary results as text files:
 ---------------------------------------------------------------------
-python ./block-1-reader.py --path <Reuters folder path> -o block1.json
-python ./block-1-reader.py --path <Reuters folder path> | python .block-2-document-segmenter.py -o block2.json
+python3 ./block-1-reader.py --path reuters21578 -o block1.json
+python3 ./block-1-reader.py --path reuters21578 | python3 .block-2-document-segmenter.py -o block2.json
 OR
-python ./block-1-reader.py --path ./Reuters --output_file block1.json
-python ./block-1-reader.py --path <Reuters folder path> | python .block-2-document-segmenter.py --output_file block2.json
+python3 ./block-1-reader.py --path reuters21578 --output_file block1.json
+python3 ./block-1-reader.py --path reuters21578 | python3 .block-2-document-segmenter.py --output_file block2.json
 
 
 Using intermediary results output from the previous block as an input into the current block.
 ----------------------------------------------------------------------------------------------------------
-python ./block-2-document-segmenter.py -i block1.json -o block2.json
-python ./block-3-extractor.py -i block2.json -o block3.json
+python3 ./block-2-document-segmenter.py -i block1.json -o block2.json
+python3 ./block-3-extractor.py -i block2.json -o block3.json
 OR
-python ./block-2-document-segmenter.py -input_file block1.json --output_file block2.json
-python ./block-3-extractor.py -input_file block2.json --output_file block3.json
+python3 ./block-2-document-segmenter.py -input_file block1.json --output_file block2.json
+python3 ./block-3-extractor.py -input_file block2.json --output_file block3.json
 
 
 Optional for block 6. If you wish to pass a stopwords list from an external file, use the following:
 -----------------------------------------------------------------------------------------------------------
-python ./block-6-stopwords-removal.py -s <Stopwords file path>
+python3 ./block-6-stopwords-removal.py -s <Stopwords file path>
 OR
-python ./block-6-stopwords-removal.py --stopwords <Stopwords file path>
+python3 ./block-6-stopwords-removal.py --stopwords <Stopwords file path>
