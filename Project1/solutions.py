@@ -33,12 +33,10 @@ def block_reader(path):
 
     for file_name in sorted(os.listdir(".")):
         if file_name.endswith(".sgm"):
-            f = open(file_name,'r')
+            f = open(file_name,'r', errors='ignore') #SGM17 has a encoding error -
+                                                    # UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 1519554:
+                                                    # invalid start byte
             raw = f.read()
-            #print(type(raw))
-            #raw.decode("utf-8")
-            #print(type(raw))
-            #print(''.join(raw).decode("utf-8"))
             reuters_file_content = raw
             yield reuters_file_content
         else:

@@ -23,7 +23,7 @@ def init_params():
 
     if type(init_params.args.stopwords) is str:
         common_check_path(init_params.args.stopwords)
-        init_params.args.stopwords = open(init_params.args.stopwords)
+        init_params.args.input_file = open(init_params.args.input_file)
 
     return init_params.args
 
@@ -33,7 +33,16 @@ def common_check_path(file):
 
 
 def output(structure):
+    #print("----")
+    #print(structure)
+    #print("----")
+    #print(type(structure))
+    #print(init_params.args)
+    #print(init_params.args.output_file)
+    #print("----")
+
     print(json.dumps(structure), file=init_params.args.output_file)
+    #print(json.dumps(structure), file = init_params.args.output_file)
 
 
 def block_1_reader_validate(reuters_files_content):
