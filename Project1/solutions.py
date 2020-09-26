@@ -16,20 +16,20 @@ def block_reader(path):
     #raise NotImplementedError("Please implement your solution in block_reader function in solutions.py")
     # ##############
 
-    import os
-    print(os.listdir(path))
 
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
+    import os
+    print(os.listdir(path))
     os.chdir(path) #To /reuters21578 folder
 
-    #Loop
+    #One Instance
     # ----
-    #f = open('reut2-000.sgm')
+    #f = open('reut2-000.sgm',errors='ignore')
     #raw = f.read()
 
-    #print(type(raw)) #Of type String
+    #reuters_file_content = raw
+    #yield reuters_file_content
     # -----
-    #reuters_file_content = 'your file content should be here'
 
     for file_name in sorted(os.listdir(".")):
         if file_name.endswith(".sgm"):
@@ -42,15 +42,12 @@ def block_reader(path):
         else:
             continue
 
-    #reuters_file_content = raw
-    #yield reuters_file_content
-    #Loop
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
 def block_document_segmenter(INPUT_STRUCTURE):
     # Delete this block first
-    raise NotImplementedError("Please implement your solution in block_document_segmenter function in solutions.py")
+    #raise NotImplementedError("Please implement your solution in block_document_segmenter function in solutions.py")
     # ##############
 
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
