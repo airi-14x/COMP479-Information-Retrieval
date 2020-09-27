@@ -12,11 +12,6 @@ for example to show what is expected to be returned. You CAN modify them accordi
 
 
 def block_reader(path):
-    # Delete this block first
-    #raise NotImplementedError("Please implement your solution in block_reader function in solutions.py")
-    # ##############
-
-
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     import os
     print(os.listdir(path))
@@ -53,35 +48,50 @@ def block_document_segmenter(INPUT_STRUCTURE):
 
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from bs4 import BeautifulSoup
-    #print(INPUT_STRUCTURE)
     file = ""
 
-    for x in INPUT_STRUCTURE:
-        #print(x)
+    # Needs input or it will hang
+    for x in INPUT_STRUCTURE: #INPUT_STRUCTURE is a generator
         file += x
-        #print("---")
 
-    #print(file)
     soup = BeautifulSoup(file, 'html.parser')
     documents = soup.find_all('reuters',limit=5)
     document = str(documents[0]) #Change tag to String
-    #print(type(str1))
-    #print("----- STR1 results----")
-    #print(str1)
-    document = document.replace("reuters", "REUTERS")
+    document = document.replace("reuters", "REUTERS") #Replace to satisfy assertion; Parser is not case sensitive
     document_text = document
 
-    #document_text = 'your document content should be here'
     yield document_text
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
 def block_extractor(INPUT_STRUCTURE):
-    # Delete this block first
-    #raise NotImplementedError("Please implement your solution in block_extractor function in solutions.py")
-    # ##############
-
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
+    from bs4 import BeautifulSoup
+    file = ""
+
+    # Needs input or it will hang
+    for x in INPUT_STRUCTURE:
+        file += x
+    #print(file)
+
+    soup = BeautifulSoup(file, 'html.parser')
+    reuters_tag_attributes = soup.reuters.attrs
+    print(type(reuters_tag_attributes))
+    print(reuters_tag_attributes["newid"])
+    #print(soup.reuters.attrs)
+
+
+    #print(len(soup.reuters))
+    #print(soup.reuters)
+    #new_id = soup.find_all('reuters',limit=1)
+    #print(new_id)
+
+    document = soup.find_all('body',limit=1)
+    if document is not None:
+        print(document)
+
+
+
     content_dict = {"ID": 123, "TEXT": "news text"}  # Sample dictionary structure of output
     yield content_dict
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
