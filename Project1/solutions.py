@@ -31,6 +31,7 @@ def block_reader(path):
     #yield reuters_file_content
     # -----
 
+    # Full Collection
     for file_name in sorted(os.listdir(".")):
         if file_name.endswith(".sgm"):
             f = open(file_name,'r', errors='ignore') #SGM17 has a encoding error -
@@ -53,19 +54,22 @@ def block_document_segmenter(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from bs4 import BeautifulSoup
     #print(INPUT_STRUCTURE)
-    file = open('block0-individual.json')
-    soup = BeautifulSoup(file, 'html.parser')
-    #print(soup.prettify())
-    test_array = soup.find_all('reuters',limit=5)
-    #print(test_array)
-    #print(type(test_array))
-    str1 = str(test_array[4])
-    #print(type(str1))
-    print("----- STR1 results----")
-    print(str1)
-    str1 = str1.replace("reuters", "REUTERS")
-    document_text = str1
+    file = ""
 
+    for x in INPUT_STRUCTURE:
+        #print(x)
+        file += x
+        #print("---")
+
+    #print(file)
+    soup = BeautifulSoup(file, 'html.parser')
+    documents = soup.find_all('reuters',limit=5)
+    document = str(documents[0]) #Change tag to String
+    #print(type(str1))
+    #print("----- STR1 results----")
+    #print(str1)
+    document = document.replace("reuters", "REUTERS")
+    document_text = document
 
     #document_text = 'your document content should be here'
     yield document_text
@@ -74,7 +78,7 @@ def block_document_segmenter(INPUT_STRUCTURE):
 
 def block_extractor(INPUT_STRUCTURE):
     # Delete this block first
-    raise NotImplementedError("Please implement your solution in block_extractor function in solutions.py")
+    #raise NotImplementedError("Please implement your solution in block_extractor function in solutions.py")
     # ##############
 
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
