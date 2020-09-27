@@ -67,32 +67,23 @@ def block_document_segmenter(INPUT_STRUCTURE):
 def block_extractor(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from bs4 import BeautifulSoup
+    import re
     file = ""
 
     # Needs input or it will hang
     for x in INPUT_STRUCTURE:
         file += x
-    #print(file)
 
     soup = BeautifulSoup(file, 'html.parser')
     reuters_tag_attributes = soup.reuters.attrs
-    print(type(reuters_tag_attributes))
-    print(reuters_tag_attributes["newid"])
-    #print(soup.reuters.attrs)
 
+    document_id = soup.reuters.attrs.get('newid')
+    document_id_arr = re.findall("\d+",document_id) #Contains number with whitespace
 
-    #print(len(soup.reuters))
-    #print(soup.reuters)
-    #new_id = soup.find_all('reuters',limit=1)
-    #print(new_id)
+    document = soup.body.contents[0]
+    document = str(document) #Cast from Iterable String to String
 
-    document = soup.find_all('body',limit=1)
-    if document is not None:
-        print(document)
-
-
-
-    content_dict = {"ID": 123, "TEXT": "news text"}  # Sample dictionary structure of output
+    content_dict = {"ID": document_id, "TEXT": document}  # Sample dictionary structure of output
     yield content_dict
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
