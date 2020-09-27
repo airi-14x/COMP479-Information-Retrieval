@@ -56,16 +56,18 @@ def block_document_segmenter(INPUT_STRUCTURE):
     file = open('block0-individual.json')
     soup = BeautifulSoup(file, 'html.parser')
     #print(soup.prettify())
-    test_array = soup.find_all('reuters',limit=2)
+    test_array = soup.find_all('reuters',limit=5)
     print(test_array)
     print(type(test_array))
-    str1 = str(test_array[1])
+    str1 = str(test_array[0])
     print(type(str1))
     print("----- STR1 results----")
     print(str1)
+    str1 = str1.replace("reuters", "REUTERS")
+    document_text = str1
 
 
-    document_text = 'your document content should be here'
+    #document_text = 'your document content should be here'
     yield document_text
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
