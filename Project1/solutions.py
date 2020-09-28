@@ -32,8 +32,7 @@ def block_reader(path):
             f = open(file_name,'r', errors='ignore')# SGM17 has a encoding error -
                                                     # UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 1519554:
                                                     # invalid start byte
-            raw = f.read()
-            reuters_file_content = raw
+            reuters_file_content = f.read()
             yield reuters_file_content
         else:
             continue
@@ -44,13 +43,21 @@ def block_reader(path):
 def block_document_segmenter(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from bs4 import BeautifulSoup
-    file = ""
+    import sys
+    data = ""
 
     # Needs input or it will hang...
-    for x in INPUT_STRUCTURE: # INPUT_STRUCTURE is a generator
-        file += x
+    #for x in INPUT_STRUCTURE: # INPUT_STRUCTURE is a generator
+    #    data += x
+    if not sys.stdin.isatty():
+        print("Here!")
+        data = sys.stdin.read()
+    else:
+        for x in INPUT_STRUCTURE:
+            data += x
 
-    soup = BeautifulSoup(file, 'html.parser')
+    #print(data)
+    soup = BeautifulSoup(data, 'html.parser')
     documents = soup.find_all('reuters',limit=5)
     document = str(documents[0]) # Change tag to String
     document = document.replace("reuters", "REUTERS") # Replace to satisfy assertion; Parser is not case sensitive
@@ -95,7 +102,7 @@ def block_tokenizer(INPUT_STRUCTURE):
     ID = article.get("ID")
     full_text = article.get("TEXT")
     full_text = full_text.replace("\\n", " ") # Remove trailing new lines
-    
+
     tokens = word_tokenize(full_text)
 
     for token in tokens:
@@ -105,9 +112,6 @@ def block_tokenizer(INPUT_STRUCTURE):
 
 
 def block_stemmer(INPUT_STRUCTURE):
-    # Delete this block first
-    raise NotImplementedError("Please implement your solution in block_stemmer function in solutions.py")
-    # ##############
 
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     token_tuple = ('id', 'token')  # Sample id, token tuple structure of output
