@@ -15,7 +15,7 @@ def block_reader(path):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     import os
     print(os.listdir(path))
-    os.chdir(path) #To /reuters21578 folder
+    os.chdir(path) # Change to /reuters21578 folder
 
     #One Instance
     # ----
@@ -29,7 +29,7 @@ def block_reader(path):
     # Full Collection
     for file_name in sorted(os.listdir(".")):
         if file_name.endswith(".sgm"):
-            f = open(file_name,'r', errors='ignore') #SGM17 has a encoding error -
+            f = open(file_name,'r', errors='ignore')# SGM17 has a encoding error -
                                                     # UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 1519554:
                                                     # invalid start byte
             raw = f.read()
@@ -42,22 +42,18 @@ def block_reader(path):
 
 
 def block_document_segmenter(INPUT_STRUCTURE):
-    # Delete this block first
-    #raise NotImplementedError("Please implement your solution in block_document_segmenter function in solutions.py")
-    # ##############
-
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from bs4 import BeautifulSoup
     file = ""
 
-    # Needs input or it will hang
-    for x in INPUT_STRUCTURE: #INPUT_STRUCTURE is a generator
+    # Needs input or it will hang...
+    for x in INPUT_STRUCTURE: # INPUT_STRUCTURE is a generator
         file += x
 
     soup = BeautifulSoup(file, 'html.parser')
     documents = soup.find_all('reuters',limit=5)
-    document = str(documents[0]) #Change tag to String
-    document = document.replace("reuters", "REUTERS") #Replace to satisfy assertion; Parser is not case sensitive
+    document = str(documents[0]) # Change tag to String
+    document = document.replace("reuters", "REUTERS") # Replace to satisfy assertion; Parser is not case sensitive
     document_text = document
 
     yield document_text
@@ -70,28 +66,24 @@ def block_extractor(INPUT_STRUCTURE):
     import re
     file = ""
 
-    # Needs input or it will hang
+    # Needs input or it will hang...
     for x in INPUT_STRUCTURE:
         file += x
 
     soup = BeautifulSoup(file, 'html.parser')
     reuters_tag_attributes = soup.reuters.attrs
 
-    document_id = soup.reuters.attrs.get('newid')
-    document_id_arr = re.findall("\d+",document_id) #Contains number with whitespace
+    document_id = soup.reuters.attrs.get('newid')  # Contains number with whitespace
+    document_id_arr = re.findall("\d+",document_id) # Retrieve sole number
 
-    document = soup.body.contents[0]
-    document = str(document) #Cast from Iterable String to String
-
-    content_dict = {"ID": document_id, "TEXT": document}  # Sample dictionary structure of output
+    text = soup.body.contents[0]
+    text = str(text) #Cast from Iterable String to String
+    content_dict = {"ID": document_id_arr[0], "TEXT": text}  # Sample dictionary structure of output
     yield content_dict
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
 def block_tokenizer(INPUT_STRUCTURE):
-    # Delete this block first
-    raise NotImplementedError("Please implement your solution in block_tokenizer function in solutions.py")
-    # ##############
 
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     token_tuple = ('id', 'token')  # Sample id, token tuple structure of output
