@@ -86,6 +86,18 @@ def block_extractor(INPUT_STRUCTURE):
 def block_tokenizer(INPUT_STRUCTURE):
 
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
+    from nltk import word_tokenize
+    article = ""
+    # Needs input or it will hang...
+    for x in INPUT_STRUCTURE:
+        article = x
+
+    ID = article.get("ID")
+    full_text = article.get("TEXT")
+    full_text = full_text.replace("\\n", " ") # Remove trailing new lines
+
+    tokens = word_tokenize(full_text)
+    #Need to set ID with tokens
     token_tuple = ('id', 'token')  # Sample id, token tuple structure of output
     yield token_tuple
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
