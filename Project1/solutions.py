@@ -46,24 +46,21 @@ def block_document_segmenter(INPUT_STRUCTURE):
     import sys
     data = ""
 
-    # Needs input or it will hang...
-    #for x in INPUT_STRUCTURE: # INPUT_STRUCTURE is a generator
-    #    data += x
     if not sys.stdin.isatty():
-        print("Here!")
+        print("block_document_segmenter - stdin() not empty!!")
         data = sys.stdin.read()
     else:
+        print("block_document_segmenter - stdin() is empty & using input file")
         for x in INPUT_STRUCTURE:
             data += x
 
-    #print(data)
     soup = BeautifulSoup(data, 'html.parser')
     documents = soup.find_all('reuters',limit=5)
-    document = str(documents[0]) # Change tag to String
-    document = document.replace("reuters", "REUTERS") # Replace to satisfy assertion; Parser is not case sensitive
-    document_text = document
+    for index, document in enumerate(documents):
+        document = str(document)
+        document_text = document.replace("reuters", "REUTERS")
+        yield document_text
 
-    yield document_text
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
