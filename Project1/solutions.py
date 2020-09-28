@@ -95,11 +95,12 @@ def block_tokenizer(INPUT_STRUCTURE):
     ID = article.get("ID")
     full_text = article.get("TEXT")
     full_text = full_text.replace("\\n", " ") # Remove trailing new lines
-
+    
     tokens = word_tokenize(full_text)
-    #Need to set ID with tokens
-    token_tuple = ('id', 'token')  # Sample id, token tuple structure of output
-    yield token_tuple
+
+    for token in tokens:
+        token_tuple = (ID,token)
+        yield token_tuple
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
