@@ -68,13 +68,18 @@ def block_extractor(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from bs4 import BeautifulSoup
     import re
-    file = ""
+    import sys
+    data = ""
 
-    # Needs input or it will hang...
-    for x in INPUT_STRUCTURE:
-        file += x
+    if not sys.stdin.isatty():
+        print("block_document_segmenter - stdin() not empty!!")
+        data = sys.stdin.read()
+    else:
+        print("block_document_segmenter - stdin() is empty & using input file")
+        for x in INPUT_STRUCTURE:
+            data += x
 
-    soup = BeautifulSoup(file, 'html.parser')
+    soup = BeautifulSoup(data, 'html.parser')
     reuters_tag_attributes = soup.reuters.attrs
 
     document_id = soup.reuters.attrs.get('newid')  # Contains number with whitespace
