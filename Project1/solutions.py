@@ -47,7 +47,7 @@ def block_document_segmenter(INPUT_STRUCTURE):
     data = ""
 
     if not sys.stdin.isatty():
-        print("block_document_segmenter - stdin() not empty!!")
+        print("block_document_segmenter - stdin() is not empty!!")
         data = sys.stdin.read()
     else:
         print("block_document_segmenter - stdin() is empty & using input file")
@@ -72,23 +72,24 @@ def block_extractor(INPUT_STRUCTURE):
     data = ""
 
     if not sys.stdin.isatty():
-        print("block_document_segmenter - stdin() not empty!!")
+        print("block_extractor - stdin() is not empty!!")
         data = sys.stdin.read()
     else:
-        print("block_document_segmenter - stdin() is empty & using input file")
+        print("block_extractor - stdin() is empty & using input file")
         for x in INPUT_STRUCTURE:
             data += x
 
     soup = BeautifulSoup(data, 'html.parser')
-    reuters_tag_attributes = soup.reuters.attrs
+    documents = soup.find_all('reuters',limit=5)
 
-    document_id = soup.reuters.attrs.get('newid')  # Contains number with whitespace
-    document_id_arr = re.findall("\d+",document_id) # Retrieve sole number
+    for index, document in enumerate(documents):
+        document_id = document.get('newid') # Contains number with whitespace
+        document_id_arr = re.findall("\d+",document_id) # Retrieve sole number
+        text = document.body.contents[0] # GET Body tag's text
+        text = str(text) #Cast from Iterable String to String
+        content_dict = {"ID": document_id_arr[0], "TEXT": text}
+        yield content_dict
 
-    text = soup.body.contents[0]
-    text = str(text) #Cast from Iterable String to String
-    content_dict = {"ID": document_id_arr[0], "TEXT": text}  # Sample dictionary structure of output
-    yield content_dict
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
