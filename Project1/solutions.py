@@ -161,17 +161,17 @@ def block_stopwords_removal(INPUT_STRUCTURE, stopwords_list):
             document_id = stemmed_token[0]
             stem_word = stemmed_token[1]
 
-            if stopwords_list: #Check if file exists
+            if stopwords_list: #Check if file exists (using as example: "stopwords-sample.txt")
              for words in stopwords_list:
-                 stopwords_arr.append(words) # Add words if not empty
+                 stopwords_arr.append(words) # Add words if file is not empty
 
             if not stopwords_arr:
-                #print("Empty stopwords list. Using default.")
+                #Use as default if stopwords list is not provided; NLTK stopwords
                 if stem_word not in stop_words:
                     token_tuple = (document_id, stem_word)
                     yield token_tuple
             else:
-                #print("Using custom stopwords list.")
+                #Use custom stopwords list
                 if stem_word not in stopwords_arr:
                  token_tuple = (document_id, stem_word)
                  yield token_tuple
