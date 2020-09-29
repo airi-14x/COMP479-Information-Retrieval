@@ -97,25 +97,32 @@ def block_tokenizer(INPUT_STRUCTURE):
 
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from nltk import word_tokenize
-    article = ""
-    # Needs input or it will hang...
-    for x in INPUT_STRUCTURE:
-        article = x
+    import sys
+    data = ""
 
-    ID = article.get("ID")
-    full_text = article.get("TEXT")
-    full_text = full_text.replace("\\n", " ") # Remove trailing new lines
+    if not sys.stdin.isatty():
+        print("block_tokenizer - stdin() is not empty!!")
+        data = sys.stdin.read()
+        for article in data:
+            print(article)
+            print("***") #How to deal with dictionary in pipeline??
 
-    tokens = word_tokenize(full_text)
+    else:
+        print("block_tokenizer - stdin() is empty & using input file")
+        for article in INPUT_STRUCTURE:
+            ID = article.get("ID")
+            full_text = article.get("TEXT")
+            full_text = full_text.replace("\\n", " ") # Remove trailing new lines
+            full_text = full_text.replace("\\","") # Remove escaped backslash lines
+            tokens = word_tokenize(full_text)
+            for token in tokens:
+                token_tuple = (ID,token)
+                yield token_tuple
 
-    for token in tokens:
-        token_tuple = (ID,token)
-        yield token_tuple
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
 def block_stemmer(INPUT_STRUCTURE):
-
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     token_tuple = ('id', 'token')  # Sample id, token tuple structure of output
     yield token_tuple
@@ -123,10 +130,6 @@ def block_stemmer(INPUT_STRUCTURE):
 
 
 def block_stopwords_removal(INPUT_STRUCTURE, stopwords):
-    # Delete this block first
-    raise NotImplementedError("Please implement your solution in block_stopwords_removal function in solutions.py")
-    # ##############
-
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     token_tuple = ('id', 'token')  # Sample id, token tuple structure of output
     yield token_tuple
