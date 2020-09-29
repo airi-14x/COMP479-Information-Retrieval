@@ -87,10 +87,10 @@ def block_extractor(INPUT_STRUCTURE):
         document_id_arr = re.findall("\d+",document_id) # Retrieve sole number
         text = document.body.contents[0] # GET Body tag's text
         text = str(text) #Cast from Iterable String to String
-        text = text.replace("\\\\n"," ")
-        text = text.replace("Reuter \\u0003","")
-        text = re.sub(r"[\\]+"," ",text)
-        articles_dictionary = {"ID": document_id_arr[0], "TEXT": text}
+        text = text.replace("\\n"," ") # Remove trailing new lines
+        text = re.sub(r"[\\]+","",text) # Remove escaped backslash lines
+        text = text.replace("Reuter u0003","")
+        articles_dictionary = {"ID":document_id_arr[0], "TEXT":text}
         yield articles_dictionary
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
@@ -101,13 +101,15 @@ def block_tokenizer(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from nltk import word_tokenize
     import sys
-    import json
+    import yaml
     data = ""
 
     if not sys.stdin.isatty():
         print("block_tokenizer - stdin() is not empty!!")
         data = sys.stdin.read()
-        data = json.loads(data)
+        data = data.replace(": ",":")
+        print(data)
+        data = yaml.load(data)
         print(data)
 
     else:
@@ -115,8 +117,6 @@ def block_tokenizer(INPUT_STRUCTURE):
         for article in INPUT_STRUCTURE:
             ID = article.get("ID")
             full_text = article.get("TEXT")
-            full_text = full_text.replace("\\n", " ") # Remove trailing new lines
-            full_text = full_text.replace("\\","") # Remove escaped backslash lines
             tokens = word_tokenize(full_text)
             for token in tokens:
                 token_tuple = (ID,token)
@@ -127,6 +127,7 @@ def block_tokenizer(INPUT_STRUCTURE):
 
 def block_stemmer(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
+    #import
     token_tuple = ('id', 'token')  # Sample id, token tuple structure of output
     yield token_tuple
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
