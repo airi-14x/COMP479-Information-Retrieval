@@ -87,8 +87,11 @@ def block_extractor(INPUT_STRUCTURE):
         document_id_arr = re.findall("\d+",document_id) # Retrieve sole number
         text = document.body.contents[0] # GET Body tag's text
         text = str(text) #Cast from Iterable String to String
-        content_dict = {"ID": document_id_arr[0], "TEXT": text}
-        yield content_dict
+        text = text.replace("\\\\n"," ")
+        text = text.replace("Reuter \\u0003","")
+        text = re.sub(r"[\\]+"," ",text)
+        articles_dictionary = {"ID": document_id_arr[0], "TEXT": text}
+        yield articles_dictionary
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
@@ -98,14 +101,14 @@ def block_tokenizer(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from nltk import word_tokenize
     import sys
+    import json
     data = ""
 
     if not sys.stdin.isatty():
         print("block_tokenizer - stdin() is not empty!!")
         data = sys.stdin.read()
-        for article in data:
-            print(article)
-            print("***") #How to deal with dictionary in pipeline??
+        data = json.loads(data)
+        print(data)
 
     else:
         print("block_tokenizer - stdin() is empty & using input file")
