@@ -102,15 +102,16 @@ def block_tokenizer(INPUT_STRUCTURE):
     from nltk import word_tokenize
     import sys
     import yaml
+    import json
+
     data = ""
 
     if not sys.stdin.isatty():
         print("block_tokenizer - stdin() is not empty!!")
         data = sys.stdin.read()
-        data = data.replace(": ",":")
-        print(data)
-        data = yaml.load(data)
-        print(data)
+        data = data.replace(": ",":") #YAML will complain if there's a spacing
+        yaml_str = yaml.dump(yaml.load(data,Loader=yaml.FullLoader))
+        dictionary = json.loads(yaml_str)
 
     else:
         print("block_tokenizer - stdin() is empty & using input file")
@@ -127,9 +128,21 @@ def block_tokenizer(INPUT_STRUCTURE):
 
 def block_stemmer(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
-    #import
-    token_tuple = ('id', 'token')  # Sample id, token tuple structure of output
-    yield token_tuple
+    from nltk.stem.porter import PorterStemmer
+    import sys
+    stemmer = PorterStemmer()
+
+    if not sys.stdin.isatty():
+        print("block_stemmer - stdin() is not empty!!")
+
+    else:
+        print("block_stemmer - stdin() is empty & using input file")
+        for token in INPUT_STRUCTURE:
+            token_stem = stemmer.stem(token[1])
+            print(type(token[0]))
+            token_tuple = (int(token[0]), token_stem)
+            yield token_tuple
+
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
