@@ -139,15 +139,41 @@ def block_stemmer(INPUT_STRUCTURE):
         print("block_stemmer - stdin() is empty & using input file")
         for token in INPUT_STRUCTURE:
             token_stem = stemmer.stem(token[1])
-            print(type(token[0]))
-            token_tuple = (int(token[0]), token_stem)
+            token_tuple = (int(token[0]), token_stem) #Cast DocumentID from String to int
             yield token_tuple
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
 
 
-def block_stopwords_removal(INPUT_STRUCTURE, stopwords):
+def block_stopwords_removal(INPUT_STRUCTURE, stopwords_list):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
-    token_tuple = ('id', 'token')  # Sample id, token tuple structure of output
-    yield token_tuple
+
+    from nltk.corpus import stopwords
+    import sys
+    stop_words = set(stopwords.words("english"))
+
+    if not sys.stdin.isatty():
+        print("block_stopwords_removal is not empty!!")
+    else:
+        print("block_stopwords_removal - stdin() is empty & using input file")
+        stopwords_arr = []
+        for stemmed_token in INPUT_STRUCTURE:
+            document_id = stemmed_token[0]
+            stem_word = stemmed_token[1]
+
+            if stopwords_list: #Check if file exists
+             for words in stopwords_list:
+                 stopwords_arr.append(words) # Add words if not empty
+
+            if not stopwords_arr:
+                #print("Empty stopwords list. Using default.")
+                if stem_word not in stop_words:
+                    token_tuple = (document_id, stem_word)
+                    yield token_tuple
+            else:
+                #print("Using custom stopwords list.")
+                if stem_word not in stopwords_arr:
+                 token_tuple = (document_id, stem_word)
+                 yield token_tuple
+
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
