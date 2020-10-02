@@ -47,10 +47,10 @@ def block_document_segmenter(INPUT_STRUCTURE):
     data = ""
 
     if not sys.stdin.isatty():
-        print("block_document_segmenter - stdin() is not empty!!")
+        #print("block_document_segmenter - stdin() is not empty!!")
         data = sys.stdin.read()
     else:
-        print("block_document_segmenter - stdin() is empty & using input file")
+        #print("block_document_segmenter - stdin() is empty & using input file")
         for x in INPUT_STRUCTURE:
             data += x
 
@@ -72,10 +72,10 @@ def block_extractor(INPUT_STRUCTURE):
     data = ""
 
     if not sys.stdin.isatty():
-        print("block_extractor - stdin() is not empty!!")
+        #print("block_extractor - stdin() is not empty!!")
         data = sys.stdin.read()
     else:
-        print("block_extractor - stdin() is empty & using input file")
+        #print("block_extractor - stdin() is empty & using input file")
         for x in INPUT_STRUCTURE:
             data += x
 
@@ -101,20 +101,29 @@ def block_tokenizer(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from nltk import word_tokenize
     import sys
-    import yaml
+    #import yaml
     import json
+    import re
 
     data = ""
 
     if not sys.stdin.isatty():
-        print("block_tokenizer - stdin() is not empty!!")
+        #print("block_tokenizer - stdin() is not empty!!")
         data = sys.stdin.read()
-        data = data.replace(": ",":") #YAML will complain if there's a spacing
-        yaml_str = yaml.dump(yaml.load(data,Loader=yaml.FullLoader))
-        dictionary = json.loads(yaml_str)
+        #data = data.replace(": ",":") #YAML will complain if there's a spacing
+        #yaml_str = yaml.dump(yaml.load(data,Loader=yaml.FullLoader))
+        #dictionary = json.loads(yaml_str)
+        data = data.replace("}","},")
+        data= re.sub(r"{","[{",data, count=1)
+        print(data)
+        data= re.sub(r"},$","}]",data, count=1)
+        print(data)
+        dictionary = json.loads(data)
+        yield data
+        #dictionary = json.loads(data)
 
     else:
-        print("block_tokenizer - stdin() is empty & using input file")
+        #print("block_tokenizer - stdin() is empty & using input file")
         for article in INPUT_STRUCTURE:
             ID = article.get("ID")
             full_text = article.get("TEXT")
@@ -136,7 +145,7 @@ def block_stemmer(INPUT_STRUCTURE):
         print("block_stemmer - stdin() is not empty!!")
 
     else:
-        print("block_stemmer - stdin() is empty & using input file")
+        #print("block_stemmer - stdin() is empty & using input file")
         for token in INPUT_STRUCTURE:
             token_stem = stemmer.stem(token[1])
             token_tuple = (int(token[0]), token_stem) #Cast DocumentID from String to int
