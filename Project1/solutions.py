@@ -15,23 +15,15 @@ def block_reader(path):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     import os
     print(os.listdir(path))
-    os.chdir(path) # Change to /reuters21578 folder
-
-    #One Instance
-    # ----
-    #f = open('reut2-000.sgm',errors='ignore')
-    #raw = f.read()
-
-    #reuters_file_content = raw
-    #yield reuters_file_content
-    # -----
+    os.chdir(path)  # Change to /reuters21578 folder
 
     # Full Collection
     for file_name in sorted(os.listdir(".")):
         if file_name.endswith(".sgm"):
-            f = open(file_name,'r', errors='ignore')# SGM17 has a encoding error -
-                                                    # UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 1519554:
-                                                    # invalid start byte
+            # SGM17 has a encoding error -
+            f = open(file_name, 'r', errors='ignore')
+            # UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 1519554:
+            # invalid start byte
             reuters_file_content = f.read()
             yield reuters_file_content
         else:
@@ -53,7 +45,7 @@ def block_document_segmenter(INPUT_STRUCTURE):
             data += x
 
     soup = BeautifulSoup(data, 'html.parser')
-    documents = soup.find_all('reuters',limit=5)
+    documents = soup.find_all('reuters', limit=5)
     for index, document in enumerate(documents):
         document = str(document)
         document_text = document.replace("reuters", "REUTERS")
@@ -76,17 +68,18 @@ def block_extractor(INPUT_STRUCTURE):
             data += x
 
     soup = BeautifulSoup(data, 'html.parser')
-    documents = soup.find_all('reuters',limit=5)
+    documents = soup.find_all('reuters', limit=5)
 
     for index, document in enumerate(documents):
-        document_id = document.get('newid') # Contains number with whitespace
-        document_id_arr = re.findall("\d+",document_id) # Retrieve sole number
-        text = document.body.contents[0] # GET Body tag's text
-        text = str(text) #Cast from Iterable String to String
-        text = text.replace("\\n"," ") # Remove trailing new lines
-        text = re.sub(r"[\\]+","",text) # Remove escaped backslash lines
-        text = text.replace("Reuter u0003","")
-        articles_dictionary = {"ID":document_id_arr[0], "TEXT":text}
+        document_id = document.get('newid')  # Contains number with whitespace
+        document_id_arr = re.findall(
+            "\d+", document_id)  # Retrieve sole number
+        text = document.body.contents[0]  # GET Body tag's text
+        text = str(text)  # Cast from Iterable String to String
+        text = text.replace("\\n", " ")  # Remove trailing new lines
+        text = re.sub(r"[\\]+", "", text)  # Remove escaped backslash lines
+        text = text.replace("Reuter u0003", "")
+        articles_dictionary = {"ID": document_id_arr[0], "TEXT": text}
         yield articles_dictionary
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
@@ -104,16 +97,16 @@ def block_tokenizer(INPUT_STRUCTURE):
 
     if not sys.stdin.isatty():
         data = sys.stdin.read()
-        data = data.replace("}","},")
-        data= re.sub(r"{","[{",data, count=1)
-        data= re.sub(r"},$","}]",data, count=1)
+        data = data.replace("}", "},")
+        data = re.sub(r"{", "[{", data, count=1)
+        data = re.sub(r"},$", "}]", data, count=1)
         dictionary = json.loads(data)
         for article in dictionary:
             ID = article.get("ID")
             full_text = article.get("TEXT")
             tokens = word_tokenize(full_text)
             for token in tokens:
-                token_tuple = (ID,token)
+                token_tuple = (ID, token)
                 yield token_tuple
 
     else:
@@ -122,7 +115,7 @@ def block_tokenizer(INPUT_STRUCTURE):
             full_text = article.get("TEXT")
             tokens = word_tokenize(full_text)
             for token in tokens:
-                token_tuple = (ID,token)
+                token_tuple = (ID, token)
                 yield token_tuple
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
@@ -146,7 +139,8 @@ def block_stemmer(INPUT_STRUCTURE):
     else:
         for token in INPUT_STRUCTURE:
             token_stem = stemmer.stem(token[1])
-            token_tuple = (int(token[0]), token_stem) #Cast DocumentID from String to int
+            # Cast DocumentID from String to int
+            token_tuple = (int(token[0]), token_stem)
             yield token_tuple
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
@@ -157,30 +151,48 @@ def block_stopwords_removal(INPUT_STRUCTURE, stopwords_list):
 
     from nltk.corpus import stopwords
     import sys
+    import json
     stop_words = set(stopwords.words("english"))
+    stopwords_arr = []
+
+    # Check if file exists (using as example: "stopwords-sample.txt")
+    if stopwords_list:
+        for words in stopwords_list:
+            stopwords_arr.append(words)  # Add words if file is not empty
 
     if not sys.stdin.isatty():
         data = sys.stdin.readlines()
-        
+        for stemmed_token in data:
+            stemmed_token_list = json.loads(stemmed_token)
+            document_id = stemmed_token_list[0]
+            stem_word = stemmed_token_list[1]
+
+            if not stopwords_arr:
+                # Use as default if stopwords list is not provided; NLTK stopwords
+                if stem_word not in stop_words:
+                    token_tuple = (document_id, stem_word)
+                    yield token_tuple
+
+            else:
+                # Use custom stopwords list
+                if stem_word not in stopwords_arr:
+                    token_tuple = (document_id, stem_word)
+                    yield token_tuple
+
     else:
-        stopwords_arr = []
         for stemmed_token in INPUT_STRUCTURE:
             document_id = stemmed_token[0]
             stem_word = stemmed_token[1]
 
-            if stopwords_list: #Check if file exists (using as example: "stopwords-sample.txt")
-             for words in stopwords_list:
-                 stopwords_arr.append(words) # Add words if file is not empty
-
             if not stopwords_arr:
-                #Use as default if stopwords list is not provided; NLTK stopwords
+                # Use as default if stopwords list is not provided; NLTK stopwords
                 if stem_word not in stop_words:
                     token_tuple = (document_id, stem_word)
                     yield token_tuple
             else:
-                #Use custom stopwords list
+                # Use custom stopwords list
                 if stem_word not in stopwords_arr:
-                 token_tuple = (document_id, stem_word)
-                 yield token_tuple
+                    token_tuple = (document_id, stem_word)
+                    yield token_tuple
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
