@@ -120,13 +120,19 @@ def block_tokenizer(INPUT_STRUCTURE):
                 yield token_tuple
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
+def unique_tokens(token_list):
+    last = object()
+    for token in token_list:
+        if token == last:
+            continue
+        yield token
+        last = token
 
-def block_stemmer(INPUT_STRUCTURE):
+
+def block_sorter(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
-    #from nltk.stem.porter import PorterStemmer
     import sys
     import json
-    #stemmer = PorterStemmer()
     data = []
 
     if not sys.stdin.isatty():
@@ -136,17 +142,12 @@ def block_stemmer(INPUT_STRUCTURE):
             #token_stem = stemmer.stem(token_list[1])
             token_tuple = (int(token_list[0]), token_list[1])
             data.append(token_tuple)
-        yield (sorted(data, key=lambda token: token[1]))
+        yield(sorted(set(map(tuple,data)),key=lambda token: token[1]))
 
     else:
         for token in INPUT_STRUCTURE:
-            #token_stem = stemmer.stem(token[1])
-            # Cast DocumentID from String to int
-            #token_tuple = (int(token[0]), token_stem)
-            #yield token_tuple
             data.append(token)
-
-        yield (sorted(data, key=lambda token: token[1]))
+        yield(sorted(set(map(tuple,data)),key=lambda token: token[1]))
 
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^

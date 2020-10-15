@@ -59,13 +59,3 @@ def block_3_extractor_validate(content_item):
 def block_4_tokenizer_validate(post):
     assert type(post) in [list, tuple], "Elements in the list should be a list or a tuple"
     assert len(post) == 2, "List should consist of 2 elements"
-
-
-def block_5_stemmer_validate(token):
-    assert type(token) in [list, tuple], "Elements in the list should be a list or a tuple"
-    assert len(token) == 2, "List should consist of 2 elements"
-
-
-def block_6_stopwords_removal_validate(token):
-    assert type(token) in [list, tuple], "Elements in the list should be a list or a tuple"
-    assert len(token) == 2, "List should consist of 2 elements"
