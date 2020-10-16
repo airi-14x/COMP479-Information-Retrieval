@@ -33,8 +33,6 @@ if args.stopwords is not None:
 
 for token in solutions.block_stopwords_removal((json.loads(line) for line in args.input_file), stopwords):
     # Validating output format
-    asserts.block_6_stopwords_removal_validate(token)
+    #asserts.block_6_stopwords_removal_validate(token)
     # Write results to stdout or file
     asserts.output(token)
-
-

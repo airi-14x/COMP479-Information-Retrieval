@@ -147,7 +147,7 @@ def block_sorter(INPUT_STRUCTURE):
     else:
         for token in INPUT_STRUCTURE:
             data.append(token)
-        yield(sorted(set(map(tuple,data)),key=lambda token: token[1]))
+        yield(sorted(set(map(tuple,data)),key=lambda token: (token[1], float(token[0]))))
 
 
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
