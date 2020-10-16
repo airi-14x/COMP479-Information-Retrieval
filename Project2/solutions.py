@@ -142,7 +142,7 @@ def block_sorter(INPUT_STRUCTURE):
             #token_stem = stemmer.stem(token_list[1])
             token_tuple = (int(token_list[0]), token_list[1])
             data.append(token_tuple)
-        yield(sorted(set(map(tuple,data)),key=lambda token: token[1]))
+        yield(sorted(set(map(tuple,data)),key=lambda token: (token[1], float(token[0]))))
 
     else:
         for token in INPUT_STRUCTURE:
