@@ -124,7 +124,7 @@ def block_sorter(INPUT_STRUCTURE):
                 current_listing = index[current_token]
                 index[current_token] = current_listing + ", " + str(token[0])
 
-        yield index
+        yield json.dumps(index)
 
     else:
         for token in INPUT_STRUCTURE:
@@ -143,56 +143,25 @@ def block_sorter(INPUT_STRUCTURE):
                 current_listing = index[current_token]
                 index[current_token] = current_listing + ", " + str(token[0])
 
-        yield index
+        yield json.dumps(index)
+
+def block_querying(INPUT_STRUCTURE):
+    current_dictionary = {}
+    import json
+    json.loads(INPUT_STRUCTURE)
+    #for element in INPUT_STRUCTURE:
+        #print(INPUT_STRUCTURE)
+        #doc_id = element[0]
+        #current_token = element[1]
+        #index[current_token] = doc_id
+
+    #print(current_dictionary[","])
+
 
 
 def block_stopwords_removal(INPUT_STRUCTURE, stopwords_list):
-    # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
-
-    from nltk.corpus import stopwords
-    import sys
     import json
-    stop_words = set(stopwords.words("english"))
-    stopwords_arr = []
-
-    # Check if file exists (using as example: "stopwords-sample.txt")
-    if stopwords_list:
-        for words in stopwords_list:
-            stopwords_arr.append(words)  # Add words if file is not empty
-
-    if not sys.stdin.isatty():
-        data = sys.stdin.readlines()
-        for stemmed_token in data:
-            stemmed_token_list = json.loads(stemmed_token)
-            document_id = stemmed_token_list[0]
-            stem_word = stemmed_token_list[1]
-
-            if not stopwords_arr:
-                # Use as default if stopwords list is not provided; NLTK stopwords
-                if stem_word not in stop_words:
-                    token_tuple = (document_id, stem_word)
-                    yield token_tuple
-
-            else:
-                # Use custom stopwords list
-                if stem_word not in stopwords_arr:
-                    token_tuple = (document_id, stem_word)
-                    yield token_tuple
-
-    else:
-        for stemmed_token in INPUT_STRUCTURE:
-            document_id = stemmed_token[0]
-            stem_word = stemmed_token[1]
-
-            if not stopwords_arr:
-                # Use as default if stopwords list is not provided; NLTK stopwords
-                if stem_word not in stop_words:
-                    token_tuple = (document_id, stem_word)
-                    yield token_tuple
-            else:
-                # Use custom stopwords list
-                if stem_word not in stopwords_arr:
-                    token_tuple = (document_id, stem_word)
-                    yield token_tuple
-
+    print(INPUT_STRUCTURE)
+    #current_data = json.loads(INPUT_STRUCTURE)
+    #print(type(current_data))
     # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
