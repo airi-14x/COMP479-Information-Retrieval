@@ -1,18 +1,5 @@
-"""
-Write your reusable code here.
-Main method stubs corresponding to each block is initialized here. Do not modify the signature of the functions already
-created for you. But if necessary you can implement any number of additional functions that you might think useful to you
-within this script.
-
-Delete "Delete this block first" code stub after writing solutions to each function.
-
-Write you code within the "WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv" code stub. Variable created within this stub are just
-for example to show what is expected to be returned. You CAN modify them according to your preference.
-"""
-
 
 def block_reader(path):
-    # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     import os
     print(os.listdir(path))
     os.chdir(path)  # Change to /reuters21578 folder
@@ -29,11 +16,9 @@ def block_reader(path):
         else:
             continue
 
-    # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
-
 
 def block_document_segmenter(INPUT_STRUCTURE):
-    # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
+
     from bs4 import BeautifulSoup
     import sys
     data = ""
@@ -51,11 +36,8 @@ def block_document_segmenter(INPUT_STRUCTURE):
         document_text = document.replace("reuters", "REUTERS")
         yield document_text
 
-    # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
-
 
 def block_extractor(INPUT_STRUCTURE):
-    # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from bs4 import BeautifulSoup
     import re
     import sys
@@ -83,12 +65,9 @@ def block_extractor(INPUT_STRUCTURE):
             articles_dictionary = {"ID": document_id_arr[0], "TEXT": text}
             yield articles_dictionary
 
-    # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
-
 
 def block_tokenizer(INPUT_STRUCTURE):
 
-    # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
     from nltk import word_tokenize
     import sys
     import json
@@ -119,15 +98,6 @@ def block_tokenizer(INPUT_STRUCTURE):
                 token_tuple = (ID, token)
                 yield token_tuple
 
-    # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
-def unique_tokens(token_list):
-    last = object()
-    for token in token_list:
-        if token == last:
-            continue
-        yield token
-        last = token
-
 
 def block_sorter(INPUT_STRUCTURE):
     # WRITE YOUR CODE HERE vvvvvvvvvvvvvvvv
@@ -142,15 +112,38 @@ def block_sorter(INPUT_STRUCTURE):
             #token_stem = stemmer.stem(token_list[1])
             token_tuple = (int(token_list[0]), token_list[1])
             data.append(token_tuple)
-        yield(sorted(set(map(tuple,data)),key=lambda token: (token[1], float(token[0]))))
+        sorted_list = sorted(set(map(tuple, data)),
+                             key=lambda token: (token[1], float(token[0])))
+        index = {}
+        for token in sorted_list:
+            doc_id = token[0]
+            current_token = token[1]
+            if current_token not in index:
+                index[current_token] = str(token[0])
+            else:
+                current_listing = index[current_token]
+                index[current_token] = current_listing + ", " + str(token[0])
+
+        yield index
 
     else:
         for token in INPUT_STRUCTURE:
             data.append(token)
-        yield(sorted(set(map(tuple,data)),key=lambda token: (token[1], float(token[0]))))
+        sorted_list = sorted(set(map(tuple, data)),
+                             key=lambda token: (token[1], float(token[0])))
 
+        index = {}
 
-    # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
+        for token in sorted_list:
+            doc_id = token[0]
+            current_token = token[1]
+            if current_token not in index:
+                index[current_token] = str(token[0])
+            else:
+                current_listing = index[current_token]
+                index[current_token] = current_listing + ", " + str(token[0])
+
+        yield index
 
 
 def block_stopwords_removal(INPUT_STRUCTURE, stopwords_list):
