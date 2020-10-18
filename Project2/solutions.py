@@ -141,27 +141,16 @@ def block_sorter(INPUT_STRUCTURE):
                 index[current_token] = str(token[0])
             else:
                 current_listing = index[current_token]
-                index[current_token] = current_listing + ", " + str(token[0])
+                index[current_token] = current_listing + " " + str(token[0])
 
-        yield json.dumps(index)
+        test = json.dumps(index)
+        dictionary_object = json.loads(test)
+        print(dictionary_object["!"])
 
-def block_querying(INPUT_STRUCTURE):
-    current_dictionary = {}
-    import json
-    json.loads(INPUT_STRUCTURE)
-    #for element in INPUT_STRUCTURE:
-        #print(INPUT_STRUCTURE)
-        #doc_id = element[0]
-        #current_token = element[1]
-        #index[current_token] = doc_id
-
-    #print(current_dictionary[","])
+        with open("index-test.json", 'w') as file:
+            json.dump(index, file)
 
 
 
-def block_stopwords_removal(INPUT_STRUCTURE, stopwords_list):
-    import json
-    print(INPUT_STRUCTURE)
-    #current_data = json.loads(INPUT_STRUCTURE)
-    #print(type(current_data))
-    # WRITE YOUR CODE HERE ^^^^^^^^^^^^^^^^
+
+        #yield json.dumps(index)
