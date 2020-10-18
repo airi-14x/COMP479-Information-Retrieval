@@ -68,10 +68,21 @@ def create_table(input_file, *args):
             )] = index3[casefold_terms.casefold()] + " " + casefold_doc_id
 
     for remove_duplicate_terms, remove_duplicate_doc_id in index3.items():
+        string = " "
         remove_duplicate_doc_id = remove_duplicate_doc_id.split(" ")
-        print(remove_duplicate_doc_id)
-        remove_duplicate_doc_id = sorted(remove_duplicate_doc_id, key=lambda token: float(
-            token[0]))  # Sorted but as float instead of string
+        #print(remove_duplicate_doc_id)
+        #print(remove_duplicate_doc_id[0])
+        remove_duplicate_doc_id = [float(i) for i in remove_duplicate_doc_id]
+        #print(type(remove_duplicate_doc_id))
+        #print(remove_duplicate_doc_id[0])
+
+        remove_duplicate_doc_id = sorted(remove_duplicate_doc_id)  # Sorted but as float instead of string
+        for index, elements in enumerate(remove_duplicate_doc_id):
+            remove_duplicate_doc_id[index] = str(elements)
+        remove_duplicate_doc_id = sorted(set(remove_duplicate_doc_id))
+
+        for index, float_value in enumerate(remove_duplicate_doc_id):
+            remove_duplicate_doc_id[index] = str(int(float(float_value)))
         # Update Dictionary
         index3[remove_duplicate_terms] = remove_duplicate_doc_id
 
@@ -79,7 +90,7 @@ def create_table(input_file, *args):
     #print(index3)
     count_term = 0
     count_doc_id = 0
-
+    #print(index3['!'])
     for final_casefold_terms, final_casefold_doc_id in index3.items():
         string = " "
         #print(final_casefold_terms)
@@ -88,7 +99,6 @@ def create_table(input_file, *args):
         count_doc_id = count_doc_id + len(string.join(final_casefold_doc_id).split(" "))
         #print(len(string.join(final_casefold_doc_id).split(" ")))
 
-    #print(index3)
     print("# of Terms: (Casefold) " + str(count_term))
     print("# of Doc IDs: (Casefold) " + str(count_doc_id))
 
@@ -109,10 +119,13 @@ def create_table(input_file, *args):
     final_compressed_dictionary = {}
 
     for non_stopword_terms, non_stopword_doc_id in index3.items():
-        print(non_stopword_terms)
+        #print(non_stopword_terms)
         if non_stopword_terms not in stopwords:
-            print("* " + non_stopword_terms)
+            #print("* " + non_stopword_terms)
             count_term = count_term + 1
+            #print(count_doc_id)
+            count_doc_id = count_doc_id + len(string.join(non_stopword_doc_id).split(" "))
+            #print(len(string.join(final_casefold_doc_id).split(" ")))
 
 
     print("# of Terms: (Stopwords) " + str(count_term))
