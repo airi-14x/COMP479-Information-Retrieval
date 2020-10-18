@@ -6,7 +6,7 @@ from argparse import RawTextHelpFormatter
 data = []
 
 
-def querying(input_file,query, *args):
+def querying(input_file, query, *args):
     text = ""
     with open(input_file) as file:
         text = file.read()
@@ -19,37 +19,104 @@ def querying(input_file,query, *args):
         print(err.args)
         print(query + " is not in the index.")
 
+
+def create_table(input_file, *args):
+    text = ""
+    with open(input_file) as file:
+        text = file.read()
+
+    index = json.loads(text)
+
     count_term = 0
     count_doc_id = 0
     for term, doc_id in index.items():
-        #print(doc_id)
         count_term = count_term + 1
         count_doc_id = count_doc_id + len(doc_id.split(" "))
-        #print(doc_id.split(" "))
-        #print(count_doc_id)
 
+    print("========================")
     print("# of Terms: (Unfiltered) " + str(count_term))
     print("# of Doc IDs: (Unfiltered) " + str(count_doc_id))
 
     count_term = 0
     count_doc_id = 0
 
-    for no_number_terms, no_number_doc_id in index.items():
-        #print(no_number_terms)
-        #print(no_number_doc_id)
+    index2 = {}
 
-        if (no_number_terms.isdigit()):
-            #print(no_number_terms)
-            #print(no_number_doc_id)
+    for no_number_terms, no_number_doc_id in index.items():
+        if re.match(r'\d', no_number_terms):
+            continue
+        elif(no_number_terms[0] == "-"):
             continue
         else:
-            #print(no_number_terms)
-            #print(no_number_doc_id)
             count_term = count_term + 1
             count_doc_id = count_doc_id + len(no_number_doc_id.split(" "))
+            index2[no_number_terms] = no_number_doc_id
 
     print("# of Terms: (No Numbers) " + str(count_term))
     print("# of Doc IDs: (No Numbers) " + str(count_doc_id))
+
+    #print('*****')
+    #print(index2)
+
+    index3 = {}
+
+    for casefold_terms, casefold_doc_id in index2.items():
+        if (casefold_terms.casefold() not in index3):
+            index3[casefold_terms.casefold()] = casefold_doc_id
+        else:
+            index3[casefold_terms.casefold(
+            )] = index3[casefold_terms.casefold()] + " " + casefold_doc_id
+
+    for remove_duplicate_terms, remove_duplicate_doc_id in index3.items():
+        remove_duplicate_doc_id = remove_duplicate_doc_id.split(" ")
+        print(remove_duplicate_doc_id)
+        remove_duplicate_doc_id = sorted(remove_duplicate_doc_id, key=lambda token: float(
+            token[0]))  # Sorted but as float instead of string
+        # Update Dictionary
+        index3[remove_duplicate_terms] = remove_duplicate_doc_id
+
+    #print('*****')
+    #print(index3)
+    count_term = 0
+    count_doc_id = 0
+
+    for final_casefold_terms, final_casefold_doc_id in index3.items():
+        string = " "
+        #print(final_casefold_terms)
+        count_term = count_term + 1
+        #print(final_casefold_doc_id)
+        count_doc_id = count_doc_id + len(string.join(final_casefold_doc_id).split(" "))
+        #print(len(string.join(final_casefold_doc_id).split(" ")))
+
+    #print(index3)
+    print("# of Terms: (Casefold) " + str(count_term))
+    print("# of Doc IDs: (Casefold) " + str(count_doc_id))
+
+    stopwords_file = ""
+    for ar in args:
+        stopwords_file = ar
+
+    stopwords = []
+    stopwords_doc = ""
+    if stopwords_file is not None:
+        stopwords_file = open(stopwords_file,'r')
+        for line in stopwords_file:
+            stopwords.append(line.strip())
+
+    count_term = 0
+    count_doc_id = 0
+
+    final_compressed_dictionary = {}
+
+    for non_stopword_terms, non_stopword_doc_id in index3.items():
+        print(non_stopword_terms)
+        if non_stopword_terms not in stopwords:
+            print("* " + non_stopword_terms)
+            count_term = count_term + 1
+
+
+    print("# of Terms: (Stopwords) " + str(count_term))
+    print("# of Doc IDs: (Stopwords) " + str(count_doc_id))
 
 
 parser = argparse.ArgumentParser(
@@ -60,5 +127,6 @@ parser.add_argument('-s', '--stopwords', default=None)
 parser.add_argument('-q', '--query', type=str, default='!')
 
 args = parser.parse_args()
-#print(args.input_file)
+# print(args.input_file)
 querying(args.input_file, args.query, args.output_file)
+create_table(args.input_file, args.stopwords)
