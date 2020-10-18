@@ -147,7 +147,7 @@ def block_sorter(INPUT_STRUCTURE):
         dictionary_object = json.loads(test)
         print(dictionary_object["!"])
 
-        with open("index-test.json", 'w') as file:
+        with open("index.json", 'w') as file:
             json.dump(index, file)
 
 
