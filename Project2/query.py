@@ -20,7 +20,7 @@ def querying(input_file, query, *args):
         print(query + " is not in the index.")
 
 
-def create_table(input_file, *args):
+def create_table_non_positional(input_file, query, *args):
     text = ""
     with open(input_file) as file:
         text = file.read()
@@ -55,9 +55,6 @@ def create_table(input_file, *args):
     print("# of Terms: (No Numbers) " + str(count_term))
     print("# of Doc IDs: (No Numbers) " + str(count_doc_id))
 
-    #print('*****')
-    #print(index2)
-
     index3 = {}
 
     for casefold_terms, casefold_doc_id in index2.items():
@@ -70,13 +67,9 @@ def create_table(input_file, *args):
     for remove_duplicate_terms, remove_duplicate_doc_id in index3.items():
         string = " "
         remove_duplicate_doc_id = remove_duplicate_doc_id.split(" ")
-        #print(remove_duplicate_doc_id)
-        #print(remove_duplicate_doc_id[0])
         remove_duplicate_doc_id = [float(i) for i in remove_duplicate_doc_id]
-        #print(type(remove_duplicate_doc_id))
-        #print(remove_duplicate_doc_id[0])
-
         remove_duplicate_doc_id = sorted(remove_duplicate_doc_id)  # Sorted but as float instead of string
+
         for index, elements in enumerate(remove_duplicate_doc_id):
             remove_duplicate_doc_id[index] = str(elements)
         remove_duplicate_doc_id = sorted(set(remove_duplicate_doc_id))
@@ -86,18 +79,12 @@ def create_table(input_file, *args):
         # Update Dictionary
         index3[remove_duplicate_terms] = remove_duplicate_doc_id
 
-    #print('*****')
-    #print(index3)
     count_term = 0
     count_doc_id = 0
-    #print(index3['!'])
     for final_casefold_terms, final_casefold_doc_id in index3.items():
         string = " "
-        #print(final_casefold_terms)
         count_term = count_term + 1
-        #print(final_casefold_doc_id)
         count_doc_id = count_doc_id + len(string.join(final_casefold_doc_id).split(" "))
-        #print(len(string.join(final_casefold_doc_id).split(" ")))
 
     print("# of Terms: (Casefold) " + str(count_term))
     print("# of Doc IDs: (Casefold) " + str(count_doc_id))
@@ -119,17 +106,23 @@ def create_table(input_file, *args):
     final_compressed_dictionary = {}
 
     for non_stopword_terms, non_stopword_doc_id in index3.items():
-        #print(non_stopword_terms)
         if non_stopword_terms not in stopwords:
-            #print("* " + non_stopword_terms)
             count_term = count_term + 1
-            #print(count_doc_id)
             count_doc_id = count_doc_id + len(string.join(non_stopword_doc_id).split(" "))
-            #print(len(string.join(final_casefold_doc_id).split(" ")))
+            non_stopword_doc_id = [float(id_number) for id_number in non_stopword_doc_id]
+            non_stopword_doc_id = sorted(non_stopword_doc_id)  # Sorted but as float instead of string
+            for index_stopwords, elements_stopwords in enumerate(non_stopword_doc_id):
+                non_stopword_doc_id[index_stopwords] = str(int(elements_stopwords))
+
+            final_compressed_dictionary[non_stopword_terms] = non_stopword_doc_id
 
 
     print("# of Terms: (Stopwords) " + str(count_term))
     print("# of Doc IDs: (Stopwords) " + str(count_doc_id))
+    print("===========================")
+
+    print("Compressed (Non-Positional Index) Query Result: ")
+    print(str(final_compressed_dictionary[query]))
 
 
 parser = argparse.ArgumentParser(
@@ -142,4 +135,4 @@ parser.add_argument('-q', '--query', type=str, default='!')
 args = parser.parse_args()
 # print(args.input_file)
 querying(args.input_file, args.query, args.output_file)
-create_table(args.input_file, args.stopwords)
+create_table_non_positional(args.input_file, args.query, args.stopwords)
