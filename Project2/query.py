@@ -20,7 +20,7 @@ def querying(input_file, query, *args):
         print(query + " is not in the index.")
 
 
-def create_table_non_positional(input_file, query, *args):
+def create_table_non_positional_index(input_file, query, *args):
     text = ""
     with open(input_file) as file:
         text = file.read()
@@ -98,8 +98,10 @@ def create_table_non_positional(input_file, query, *args):
     if stopwords_file is not None:
         stopwords_file = open(stopwords_file,'r')
         for line in stopwords_file:
-            stopwords.append(line.strip())
+            current_line = line.split(" ")
+            stopwords.append(current_line[1].strip())
 
+    #print(stopwords)
     count_term = 0
     count_doc_id = 0
 
@@ -116,13 +118,17 @@ def create_table_non_positional(input_file, query, *args):
 
             final_compressed_dictionary[non_stopword_terms] = non_stopword_doc_id
 
-
     print("# of Terms: (Stopwords) " + str(count_term))
     print("# of Doc IDs: (Stopwords) " + str(count_doc_id))
     print("===========================")
 
     print("Compressed (Non-Positional Index) Query Result: ")
-    print(str(final_compressed_dictionary[query]))
+    try:
+        print(str(final_compressed_dictionary[query]))
+    except KeyError as err:
+        print(err.args)
+        print(query + " is not in the index.")
+
 
 
 parser = argparse.ArgumentParser(
@@ -135,4 +141,4 @@ parser.add_argument('-q', '--query', type=str, default='!')
 args = parser.parse_args()
 # print(args.input_file)
 querying(args.input_file, args.query, args.output_file)
-create_table_non_positional(args.input_file, args.query, args.stopwords)
+create_table_non_positional_index(args.input_file, args.query, args.stopwords)
