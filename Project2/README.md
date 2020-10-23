@@ -1,4 +1,4 @@
-###Project #2
+<h2>Project 2 </h2>
 
 - Create a Naive Indexer
 	- Remove duplicate terms by merging duplicate terms' posting lists and sort them.
