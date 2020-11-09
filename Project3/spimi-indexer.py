@@ -13,6 +13,7 @@ def build_index(input_file, output_file):
 
 
     current_dictionary = {}
+    block_counter = 0
     for line in lines:
         line_arr = line.split(",")
         doc_id_component = line_arr[0]
@@ -22,17 +23,29 @@ def build_index(input_file, output_file):
         doc_id = doc_id_element[1] # Actual docID
         term = term_element[1]
 
-        current_dictionary[term] = doc_id
+        if term in current_dictionary:
+            current_doc_ids = current_dictionary[term]
+
+            if doc_id not in current_doc_ids: # add docID if it's not a duplicate
+                current_doc_ids.append(doc_id)
+
+        else:
+            current_list = []
+            current_list.append(doc_id)
+            current_dictionary[term] = current_list
+
         if len(current_dictionary) > 500:
             print(current_dictionary)
-            break
+            block_name = "BLOCK" + str(block_counter)
+            json.dump(current_dictionary, open(block_name, "w", encoding="utf-8"), indent=3)
 
+            block_counter = block_counter + 1
+            current_dictionary.clear()
 
-    #print(lines[4])
-    #json.dump(lines, open(
-    #    output_file, "w", encoding="utf-8"), indent=3)
-
-
+            print("Current Dictionary: ")
+            print(current_dictionary)
+            print("Current Block Counter: ")
+            print(block_counter)
 
 
 parser = argparse.ArgumentParser(
@@ -44,7 +57,4 @@ parser.add_argument('-o', '--output_file', type=str,
 #parser.add_argument('-q', '--query', type=str, default='!')
 
 args = parser.parse_args()
-# print(args.input_file)
-build_index(args.input_file,args.output_file)
-#querying(args.input_file, args.query, args.output_file)
-#create_table_non_positional_index(args.input_file, args.query, args.stopwords)
+#build_index(args.input_file,args.output_file)
