@@ -1,131 +1,30 @@
 {
-   "Showers": [
-      "1"
-   ],
-   "continued": [
-      "1"
-   ],
-   "throughout": [
-      "1"
-   ],
-   "the": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5"
-   ],
-   "week": [
-      "1",
-      "4"
-   ],
-   "in": [
-      "1",
-      "2",
-      "3",
-      "4"
-   ],
-   "Bahia": [
-      "1"
-   ],
-   "cocoa": [
-      "1"
-   ],
-   "zone": [
-      "1"
-   ],
    "": [
       "1",
       "2",
       "4"
    ],
-   "alleviating": [
-      "1"
-   ],
-   "drought": [
-      "1"
-   ],
-   "since": [
-      "1"
-   ],
-   "early": [
-      "1"
-   ],
-   "January": [
-      "1",
+   "''": [
       "4"
    ],
-   "and": [
-      "1",
-      "2",
+   "'d": [
+      "4"
+   ],
+   "'s": [
       "3",
       "4"
    ],
-   "improving": [
+   "(": [
+      "5"
+   ],
+   ")": [
+      "5"
+   ],
+   "+Bahia": [
       "1"
    ],
-   "prospects": [
-      "1"
-   ],
-   "for": [
-      "1",
-      "4"
-   ],
-   "coming": [
-      "1",
-      "4"
-   ],
-   "temporao": [
-      "1"
-   ],
-   "although": [
-      "1"
-   ],
-   "normal": [
-      "1"
-   ],
-   "humidity": [
-      "1"
-   ],
-   "levels": [
-      "1"
-   ],
-   "have": [
-      "1",
-      "4"
-   ],
-   "not": [
-      "1",
-      "4"
-   ],
-   "been": [
-      "1"
-   ],
-   "restored": [
-      "1"
-   ],
-   "Comissaria": [
-      "1"
-   ],
-   "Smith": [
-      "1",
-      "4"
-   ],
-   "said": [
-      "1",
-      "2",
-      "3",
-      "4"
-   ],
-   "its": [
-      "1",
-      "4"
-   ],
-   "weekly": [
-      "1"
-   ],
-   "review": [
-      "1"
+   "-": [
+      "5"
    ],
    ".": [
       "1",
@@ -133,743 +32,128 @@
       "3",
       "4"
    ],
-   "The": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5"
-   ],
-   "dry": [
-      "1"
-   ],
-   "period": [
-      "1"
-   ],
-   "means": [
-      "1"
-   ],
-   "will": [
-      "1",
-      "2",
-      "4"
-   ],
-   "be": [
-      "1",
-      "2",
-      "4"
-   ],
-   "late": [
-      "1"
-   ],
-   "this": [
-      "1",
-      "4"
-   ],
-   "year": [
-      "1",
-      "4"
-   ],
-   "Arrivals": [
-      "1"
-   ],
-   "ended": [
-      "1"
-   ],
-   "February": [
-      "1",
-      "4",
-      "5"
-   ],
-   "22": [
-      "1"
-   ],
-   "were": [
-      "1"
-   ],
-   "155": [
-      "1"
-   ],
-   "bags": [
-      "1"
-   ],
-   "of": [
-      "1",
-      "2",
-      "3",
-      "4"
-   ],
-   "60": [
-      "1"
-   ],
-   "kilos": [
-      "1"
-   ],
-   "making": [
-      "1"
-   ],
-   "a": [
-      "1",
-      "2",
-      "4"
-   ],
-   "cumulative": [
-      "1"
-   ],
-   "total": [
-      "1"
-   ],
-   "season": [
-      "1"
-   ],
-   "5.93": [
-      "1"
-   ],
-   "mln": [
-      "1",
-      "4"
-   ],
-   "against": [
-      "1"
-   ],
-   "5.81": [
-      "1"
-   ],
-   "at": [
-      "1",
-      "4"
-   ],
-   "same": [
-      "1"
-   ],
-   "stage": [
-      "1"
-   ],
-   "last": [
-      "1"
-   ],
-   "Again": [
-      "1"
-   ],
-   "it": [
-      "1",
-      "3",
-      "4"
-   ],
-   "seems": [
-      "1"
-   ],
-   "that": [
-      "1",
-      "4"
-   ],
-   "delivered": [
-      "1"
-   ],
-   "earlier": [
-      "1",
-      "4"
-   ],
-   "on": [
-      "1",
-      "4"
-   ],
-   "consignment": [
-      "1"
-   ],
-   "was": [
-      "1",
-      "4"
-   ],
-   "included": [
-      "1"
-   ],
-   "arrivals": [
-      "1"
-   ],
-   "figures": [
-      "1"
-   ],
-   "there": [
-      "1"
-   ],
-   "is": [
-      "1",
-      "2",
-      "4"
-   ],
-   "still": [
-      "1"
-   ],
-   "some": [
-      "1"
-   ],
-   "doubt": [
-      "1"
-   ],
-   "as": [
-      "1",
-      "4",
-      "5"
-   ],
-   "to": [
-      "1",
-      "2",
-      "3",
-      "4"
-   ],
-   "how": [
-      "1"
-   ],
-   "much": [
-      "1",
-      "4"
-   ],
-   "old": [
-      "1"
-   ],
-   "crop": [
-      "1"
-   ],
-   "available": [
-      "1"
-   ],
-   "harvesting": [
-      "1"
-   ],
-   "has": [
-      "1",
-      "4"
-   ],
-   "practically": [
-      "1"
-   ],
-   "come": [
-      "1"
-   ],
-   "an": [
-      "1",
-      "3",
-      "4"
-   ],
-   "end": [
-      "1"
-   ],
-   "With": [
-      "1",
-      "4"
-   ],
-   "estimates": [
-      "1"
-   ],
-   "around": [
-      "1",
-      "4"
-   ],
-   "6.4": [
-      "1"
-   ],
-   "sales": [
-      "1"
-   ],
-   "standing": [
-      "1",
-      "4"
-   ],
-   "almost": [
-      "1"
-   ],
-   "6.2": [
-      "1"
-   ],
-   "are": [
-      "1"
-   ],
-   "few": [
-      "1"
-   ],
-   "hundred": [
-      "1"
-   ],
-   "thousand": [
-      "1"
-   ],
-   "hands": [
-      "1"
-   ],
-   "farmers": [
-      "1"
-   ],
-   "middlemen": [
-      "1"
-   ],
-   "exporters": [
-      "1"
-   ],
-   "processors": [
-      "1"
-   ],
-   "There": [
-      "1"
-   ],
-   "doubts": [
-      "1"
-   ],
-   "would": [
-      "1",
-      "3",
-      "4"
-   ],
-   "fit": [
-      "1"
-   ],
-   "export": [
-      "1"
-   ],
-   "shippers": [
-      "1"
-   ],
-   "now": [
-      "1",
-      "4"
-   ],
-   "experiencing": [
-      "1"
-   ],
-   "dificulties": [
-      "1"
-   ],
-   "obtaining": [
-      "1"
-   ],
-   "+Bahia": [
-      "1"
-   ],
-   "superior+": [
-      "1"
-   ],
-   "certificates": [
-      "1"
-   ],
-   "In": [
-      "1"
-   ],
-   "view": [
-      "1"
-   ],
-   "lower": [
-      "1",
-      "4"
-   ],
-   "quality": [
-      "1"
-   ],
-   "over": [
-      "1",
-      "4"
-   ],
-   "recent": [
-      "1",
-      "4"
-   ],
-   "weeks": [
-      "1",
-      "4"
-   ],
-   "sold": [
-      "1"
-   ],
-   "good": [
-      "1"
-   ],
-   "part": [
-      "1",
-      "4"
-   ],
-   "their": [
-      "1"
-   ],
-   "held": [
-      "1"
-   ],
-   "spot": [
-      "1"
-   ],
-   "bean": [
-      "1"
-   ],
-   "prices": [
-      "1"
-   ],
-   "rose": [
-      "1"
-   ],
-   "340": [
-      "1"
-   ],
-   "350": [
-      "1"
-   ],
-   "cruzados": [
-      "1"
-   ],
-   "per": [
-      "1"
-   ],
-   "arroba": [
-      "1"
-   ],
-   "15": [
-      "1"
-   ],
-   "Bean": [
-      "1"
-   ],
-   "reluctant": [
-      "1"
-   ],
-   "offer": [
-      "1",
-      "4"
-   ],
-   "nearby": [
-      "1"
-   ],
-   "shipment": [
-      "1"
-   ],
-   "only": [
-      "1"
-   ],
-   "limited": [
-      "1"
-   ],
-   "booked": [
-      "1"
-   ],
-   "March": [
+   "0.39": [
       "1"
    ],
    "1": [
       "1"
    ],
-   "dlrs": [
-      "1",
-      "3",
-      "4"
-   ],
-   "tonne": [
-      "1"
-   ],
-   "ports": [
-      "1"
-   ],
-   "named": [
-      "1"
-   ],
-   "New": [
-      "1"
-   ],
-   "also": [
-      "1",
-      "2"
-   ],
-   "light": [
-      "1"
-   ],
-   "all": [
-      "1"
-   ],
-   "open": [
-      "1"
-   ],
-   "with": [
-      "1",
-      "3",
-      "4"
-   ],
-   "June/July": [
-      "1"
-   ],
-   "going": [
-      "1"
-   ],
-   "35": [
-      "1"
-   ],
-   "45": [
-      "1"
-   ],
-   "under": [
-      "1",
-      "2",
-      "4"
-   ],
-   "York": [
-      "1"
-   ],
-   "july": [
-      "1"
-   ],
-   "Aug/Sept": [
-      "1"
-   ],
-   "FOB": [
-      "1"
-   ],
-   "Routine": [
-      "1"
-   ],
-   "butter": [
-      "1"
-   ],
-   "made": [
-      "1"
-   ],
-   "March/April": [
-      "1"
-   ],
-   "4": [
-      "1"
-   ],
-   "April/May": [
-      "1"
-   ],
-   "went": [
-      "1"
-   ],
-   "2.27": [
-      "1"
-   ],
-   "times": [
-      "1"
-   ],
-   "May": [
-      "1"
-   ],
-   "2.28": [
-      "1"
-   ],
-   "Sept": [
-      "1"
-   ],
-   "Oct/Dec": [
-      "1"
-   ],
-   "Dec": [
-      "1"
-   ],
-   "Destinations": [
-      "1"
-   ],
-   "U.S.": [
-      "1",
-      "5"
-   ],
-   "Covertible": [
-      "1"
-   ],
-   "currency": [
-      "1"
-   ],
-   "areas": [
-      "1"
-   ],
-   "Uruguay": [
-      "1"
-   ],
-   "Cake": [
-      "1"
-   ],
-   "registered": [
-      "1"
-   ],
-   "785": [
-      "1"
-   ],
-   "995": [
-      "1"
-   ],
-   "753": [
-      "1"
-   ],
-   "Aug": [
-      "1"
-   ],
-   "0.39": [
-      "1"
-   ],
-   "Buyers": [
-      "1"
-   ],
-   "Argentina": [
-      "1"
-   ],
-   "convertible": [
-      "1",
-      "4"
-   ],
-   "Liquor": [
-      "1"
-   ],
-   "selling": [
-      "1"
-   ],
-   "2": [
+   "1.06": [
       "1"
    ],
    "1.25": [
       "1"
    ],
-   "July": [
+   "1/8": [
+      "4"
+   ],
+   "11-1/2": [
+      "4"
+   ],
+   "12": [
+      "4"
+   ],
+   "13.5": [
+      "3"
+   ],
+   "15": [
       "1"
    ],
-   "Total": [
-      "1"
+   "15-20": [
+      "4"
    ],
-   "currently": [
-      "1"
-   ],
-   "estimated": [
-      "1"
-   ],
-   "6.13": [
+   "155": [
       "1"
    ],
    "1986/87": [
       "1"
    ],
-   "1.06": [
-      "1"
-   ],
    "1987/88": [
       "1"
    ],
-   "Final": [
+   "2": [
+      "1"
+   ],
+   "2.27": [
+      "1"
+   ],
+   "2.28": [
+      "1"
+   ],
+   "2.70": [
+      "4"
+   ],
+   "200": [
+      "4"
+   ],
+   "22": [
+      "1"
+   ],
+   "25": [
+      "5"
+   ],
+   "26": [
+      "4"
+   ],
+   "27": [
       "1"
    ],
    "28": [
       "1"
    ],
-   "expected": [
-      "1",
-      "4"
-   ],
-   "published": [
-      "1"
-   ],
-   "by": [
-      "1",
-      "2",
-      "4"
-   ],
-   "Brazilian": [
-      "1",
-      "4"
-   ],
-   "Cocoa": [
-      "1"
-   ],
-   "Trade": [
-      "1"
-   ],
-   "Commission": [
-      "1",
-      "4"
-   ],
-   "after": [
-      "1",
-      "4"
-   ],
-   "carnival": [
-      "1"
-   ],
-   "which": [
-      "1",
-      "2",
-      "4"
-   ],
-   "ends": [
-      "1"
-   ],
-   "midday": [
-      "1"
-   ],
-   "27": [
-      "1"
-   ],
-   "Standard": [
-      "2"
-   ],
-   "Oil": [
-      "2"
-   ],
-   "Co": [
-      "2",
-      "4"
-   ],
-   "BP": [
-      "2"
-   ],
-   "North": [
-      "2"
-   ],
-   "America": [
-      "2"
-   ],
-   "Inc": [
-      "2",
+   "31": [
       "3"
    ],
-   "they": [
-      "2",
+   "340": [
+      "1"
+   ],
+   "35": [
+      "1"
+   ],
+   "350": [
+      "1"
+   ],
+   "4": [
+      "1"
+   ],
+   "45": [
+      "1"
+   ],
+   "5.81": [
+      "1"
+   ],
+   "5.93": [
+      "1"
+   ],
+   "55": [
+      "2"
+   ],
+   "6.13": [
+      "1"
+   ],
+   "6.2": [
+      "1"
+   ],
+   "6.4": [
+      "1"
+   ],
+   "60": [
+      "1"
+   ],
+   "7.5": [
+      "3"
+   ],
+   "753": [
+      "1"
+   ],
+   "785": [
+      "1"
+   ],
+   "9": [
       "4"
    ],
-   "plan": [
-      "2"
-   ],
-   "form": [
-      "2"
-   ],
-   "venture": [
-      "2"
-   ],
-   "manage": [
-      "2"
-   ],
-   "money": [
-      "2"
-   ],
-   "market": [
-      "2",
-      "4"
-   ],
-   "borrowing": [
-      "2"
-   ],
-   "investment": [
-      "2"
-   ],
-   "activities": [
-      "2"
-   ],
-   "both": [
-      "2"
-   ],
-   "companies": [
-      "2"
-   ],
-   "subsidiary": [
-      "2"
-   ],
-   "British": [
-      "2"
-   ],
-   "Petroleum": [
-      "2"
-   ],
-   "Plc": [
-      "2"
+   "995": [
+      "1"
    ],
    "<": [
       "2",
@@ -879,731 +163,1447 @@
       "2",
       "4"
    ],
-   "owns": [
+   "A": [
+      "4"
+   ],
+   "Again": [
+      "1"
+   ],
+   "Agriculture": [
+      "5"
+   ],
+   "Although": [
+      "4"
+   ],
+   "America": [
       "2"
    ],
-   "55": [
+   "April/May": [
+      "1"
+   ],
+   "Argentina": [
+      "1"
+   ],
+   "Arrivals": [
+      "1"
+   ],
+   "Arsenio": [
+      "4"
+   ],
+   "Arthur": [
+      "4"
+   ],
+   "Aug": [
+      "1"
+   ],
+   "Aug/Sept": [
+      "1"
+   ],
+   "BP": [
       "2"
    ],
-   "pct": [
+   "BP/Standard": [
       "2"
    ],
-   "interest": [
+   "Bahia": [
+      "1"
+   ],
+   "Bancorp": [
+      "4"
+   ],
+   "Bancshares": [
+      "3"
+   ],
+   "Bank-Houston": [
+      "3"
+   ],
+   "BankAmerica": [
+      "4"
+   ],
+   "Banking": [
+      "4"
+   ],
+   "Bean": [
+      "1"
+   ],
+   "Birr": [
+      "4"
+   ],
+   "Brazil": [
+      "4"
+   ],
+   "Brazilian": [
+      "1",
+      "4"
+   ],
+   "British": [
+      "2"
+   ],
+   "Buyers": [
+      "1"
+   ],
+   "Cake": [
+      "1"
+   ],
+   "Co": [
+      "2",
+      "4"
+   ],
+   "Cocoa": [
+      "1"
+   ],
+   "Cohn": [
+      "4"
+   ],
+   "Comissaria": [
+      "1"
+   ],
+   "Commerce": [
+      "3"
+   ],
+   "Commission": [
+      "1",
+      "4"
+   ],
+   "Communications": [
+      "4"
+   ],
+   "Comptroller": [
+      "3"
+   ],
+   "Corp": [
+      "4"
+   ],
+   "County": [
+      "3"
+   ],
+   "Covertible": [
+      "1"
+   ],
+   "Currency": [
+      "3"
+   ],
+   "Cwt": [
+      "5"
+   ],
+   "Daniel": [
+      "4"
+   ],
+   "Dec": [
+      "1"
+   ],
+   "Department": [
+      "5"
+   ],
+   "Destinations": [
+      "1"
+   ],
+   "Dlrs/Bu-Sorghum": [
+      "5"
+   ],
+   "Exchange": [
+      "4"
+   ],
+   "FOB": [
+      "1"
+   ],
+   "February": [
+      "1",
+      "4",
+      "5"
+   ],
+   "Fenner": [
+      "4"
+   ],
+   "Final": [
+      "1"
+   ],
+   "Financial": [
+      "2",
+      "4"
+   ],
+   "First": [
+      "4"
+   ],
+   "Group": [
+      "4"
+   ],
+   "Harris": [
+      "3"
+   ],
+   "He": [
+      "4"
+   ],
+   "I": [
+      "4"
+   ],
+   "In": [
+      "1"
+   ],
+   "Inc": [
+      "2",
+      "3"
+   ],
+   "Interstate": [
+      "4"
+   ],
+   "It": [
+      "4"
+   ],
+   "January": [
+      "1",
+      "4"
+   ],
+   "Joseph": [
+      "4"
+   ],
+   "July": [
+      "1"
+   ],
+   "June/July": [
+      "1"
+   ],
+   "Lawrence": [
+      "4"
+   ],
+   "Liquor": [
+      "1"
+   ],
+   "Lynch": [
+      "4"
+   ],
+   "March": [
+      "1"
+   ],
+   "March/April": [
+      "1"
+   ],
+   "May": [
+      "1"
+   ],
+   "Merrill": [
+      "4"
+   ],
+   "Mexico": [
+      "4"
+   ],
+   "Miller": [
+      "4"
+   ],
+   "Natl": [
+      "5"
+   ],
+   "Nevertheless": [
+      "4"
+   ],
+   "New": [
+      "1"
+   ],
+   "North": [
+      "2"
+   ],
+   "Oct/Dec": [
+      "1"
+   ],
+   "Oil": [
+      "2"
+   ],
+   "Petroleum": [
+      "2"
+   ],
+   "Pierce": [
+      "4"
+   ],
+   "Plc": [
+      "2"
+   ],
+   "President": [
+      "4"
+   ],
+   "Routine": [
+      "1"
+   ],
+   "SEC": [
+      "4"
+   ],
+   "Securities": [
+      "4"
+   ],
+   "Sept": [
+      "1"
+   ],
+   "Several": [
+      "4"
+   ],
+   "Showers": [
+      "1"
+   ],
+   "Smith": [
+      "1",
+      "4"
+   ],
+   "Some": [
+      "4"
+   ],
+   "Standard": [
+      "2"
+   ],
+   "Such": [
+      "4"
+   ],
+   "Sutro": [
+      "4"
+   ],
+   "Texas": [
+      "3"
+   ],
+   "The": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+   ],
+   "There": [
+      "1"
+   ],
+   "Total": [
+      "1"
+   ],
+   "Trade": [
+      "1"
+   ],
+   "Trading": [
+      "2"
+   ],
+   "U.S.": [
+      "1",
+      "5"
+   ],
+   "Uruguay": [
+      "1"
+   ],
+   "Vice": [
+      "4"
+   ],
+   "Williams": [
+      "4"
+   ],
+   "Wilson": [
+      "4"
+   ],
+   "With": [
+      "1",
+      "4"
+   ],
+   "York": [
+      "1"
+   ],
+   "``": [
+      "4"
+   ],
+   "a": [
+      "1",
+      "2",
+      "4"
+   ],
+   "about": [
+      "4"
+   ],
+   "act": [
+      "4"
+   ],
+   "activities": [
+      "2"
+   ],
+   "after": [
+      "1",
+      "4"
+   ],
+   "afternoon": [
+      "4"
+   ],
+   "against": [
+      "1"
+   ],
+   "all": [
+      "1"
+   ],
+   "alleviating": [
+      "1"
+   ],
+   "almost": [
+      "1"
+   ],
+   "along": [
+      "4"
+   ],
+   "also": [
+      "1",
+      "2"
+   ],
+   "although": [
+      "1"
+   ],
+   "an": [
+      "1",
+      "3",
+      "4"
+   ],
+   "analyst": [
+      "4"
+   ],
+   "analysts": [
+      "4"
+   ],
+   "and": [
+      "1",
+      "2",
+      "3",
+      "4"
+   ],
+   "any": [
+      "4"
+   ],
+   "application": [
+      "3"
+   ],
+   "approval": [
+      "4"
+   ],
+   "approved": [
+      "4"
+   ],
+   "are": [
+      "1"
+   ],
+   "areas": [
+      "1"
+   ],
+   "around": [
+      "1",
+      "4"
+   ],
+   "arrivals": [
+      "1"
+   ],
+   "arroba": [
+      "1"
+   ],
+   "as": [
+      "1",
+      "4",
+      "5"
+   ],
+   "asked": [
+      "4"
+   ],
+   "assets": [
+      "3"
+   ],
+   "at": [
+      "1",
+      "4"
+   ],
+   "available": [
+      "1"
+   ],
+   "average": [
+      "5"
+   ],
+   "bags": [
+      "1"
+   ],
+   "bank": [
+      "3",
+      "4"
+   ],
+   "banking": [
+      "3",
+      "4"
+   ],
+   "banks": [
+      "3",
+      "4"
+   ],
+   "be": [
+      "1",
+      "2",
+      "4"
+   ],
+   "bean": [
+      "1"
+   ],
+   "because": [
+      "4"
+   ],
+   "been": [
+      "1"
+   ],
+   "believe": [
+      "4"
+   ],
+   "believed": [
+      "4"
+   ],
+   "bid": [
+      "4"
+   ],
+   "billion": [
+      "3",
+      "4"
+   ],
+   "booked": [
+      "1"
+   ],
+   "borrowing": [
+      "2"
+   ],
+   "both": [
+      "2"
+   ],
+   "butter": [
+      "1"
+   ],
+   "by": [
+      "1",
       "2",
       "4"
    ],
    "called": [
       "2"
    ],
-   "BP/Standard": [
-      "2"
+   "carnival": [
+      "1"
    ],
-   "Financial": [
-      "2",
+   "certificates": [
+      "1"
+   ],
+   "circumstances": [
       "4"
    ],
-   "Trading": [
-      "2"
+   "cocoa": [
+      "1"
    ],
-   "operated": [
-      "2"
+   "come": [
+      "1"
    ],
-   "oversight": [
-      "2"
-   ],
-   "joint": [
-      "2"
-   ],
-   "management": [
-      "2"
+   "coming": [
+      "1",
+      "4"
    ],
    "committee": [
       "2"
    ],
-   "Texas": [
-      "3"
+   "companies": [
+      "2"
    ],
-   "Commerce": [
-      "3"
-   ],
-   "Bancshares": [
-      "3"
-   ],
-   "'s": [
-      "3",
-      "4"
-   ],
-   "Bank-Houston": [
-      "3"
-   ],
-   "filed": [
-      "3",
-      "4"
-   ],
-   "application": [
-      "3"
-   ],
-   "Comptroller": [
-      "3"
-   ],
-   "Currency": [
-      "3"
-   ],
-   "effort": [
-      "3"
-   ],
-   "create": [
-      "3"
-   ],
-   "largest": [
-      "3"
-   ],
-   "banking": [
-      "3",
-      "4"
-   ],
-   "network": [
-      "3"
-   ],
-   "Harris": [
-      "3"
-   ],
-   "County": [
-      "3"
-   ],
-   "bank": [
-      "3",
-      "4"
-   ],
-   "link": [
-      "3"
-   ],
-   "31": [
-      "3"
-   ],
-   "banks": [
-      "3",
-      "4"
-   ],
-   "having": [
-      "3"
-   ],
-   "13.5": [
-      "3"
-   ],
-   "billion": [
-      "3",
-      "4"
-   ],
-   "assets": [
-      "3"
-   ],
-   "7.5": [
-      "3"
-   ],
-   "deposits": [
-      "3"
-   ],
-   "BankAmerica": [
-      "4"
-   ],
-   "Corp": [
-      "4"
-   ],
-   "pressure": [
-      "4"
-   ],
-   "act": [
-      "4"
-   ],
-   "quickly": [
-      "4"
-   ],
-   "proposed": [
-      "4"
-   ],
-   "equity": [
-      "4"
-   ],
-   "offering": [
-      "4"
-   ],
-   "do": [
-      "4"
-   ],
-   "well": [
-      "4"
-   ],
-   "delay": [
-      "4"
-   ],
-   "because": [
-      "4"
-   ],
-   "stock": [
-      "4"
-   ],
-   "poor": [
-      "4"
-   ],
-   "performance": [
-      "4"
-   ],
-   "analysts": [
-      "4"
-   ],
-   "Some": [
-      "4"
-   ],
-   "recommended": [
-      "4"
-   ],
-   "up": [
-      "4"
-   ],
-   "one-billion-dlr": [
-      "4"
-   ],
-   "yet": [
-      "4"
-   ],
-   "approved": [
-      "4"
-   ],
-   "Securities": [
-      "4"
-   ],
-   "Exchange": [
-      "4"
-   ],
-   "fell": [
-      "4"
-   ],
-   "along": [
-      "4"
-   ],
-   "other": [
-      "4"
-   ],
-   "issues": [
-      "4"
-   ],
-   "news": [
-      "4"
-   ],
-   "Brazil": [
-      "4"
-   ],
-   "suspended": [
-      "4"
-   ],
-   "payments": [
-      "4"
-   ],
-   "large": [
-      "4"
-   ],
-   "portion": [
-      "4"
-   ],
-   "foreign": [
-      "4"
-   ],
-   "debt": [
-      "4"
-   ],
-   "traded": [
-      "4"
-   ],
-   "12": [
-      "4"
-   ],
-   "down": [
-      "4"
-   ],
-   "1/8": [
-      "4"
-   ],
-   "afternoon": [
-      "4"
-   ],
-   "falling": [
-      "4"
-   ],
-   "11-1/2": [
-      "4"
-   ],
-   "Banking": [
-      "4"
-   ],
-   "immediate": [
-      "4"
-   ],
-   "threat": [
-      "4"
-   ],
-   "First": [
-      "4"
-   ],
-   "Interstate": [
-      "4"
-   ],
-   "Bancorp": [
-      "4"
-   ],
-   "I": [
-      "4"
-   ],
-   "takeover": [
-      "4"
-   ],
-   "bid": [
-      "4"
-   ],
-   "gone": [
-      "4"
-   ],
-   "no": [
-      "4"
-   ],
-   "sell": [
-      "4"
-   ],
-   "securities": [
-      "4"
-   ],
-   "into": [
-      "4"
-   ],
-   "nervous": [
-      "4"
-   ],
-   "stocks": [
-      "4"
-   ],
-   "near": [
-      "4"
-   ],
-   "term": [
-      "4"
-   ],
-   "26": [
-      "4"
-   ],
-   "It": [
-      "4"
-   ],
-   "seen": [
-      "4"
-   ],
-   "one": [
-      "4"
-   ],
-   "major": [
-      "4"
-   ],
-   "factors": [
-      "4"
-   ],
-   "leading": [
-      "4"
-   ],
-   "withdrawing": [
-      "4"
-   ],
-   "9": [
-      "4"
-   ],
-   "A": [
-      "4"
-   ],
-   "spokesman": [
-      "4"
-   ],
-   "SEC": [
-      "4"
-   ],
-   "approval": [
-      "4"
-   ],
-   "taking": [
-      "4"
-   ],
-   "longer": [
-      "4"
-   ],
-   "than": [
+   "conceivably": [
       "4"
    ],
    "conditions": [
       "4"
    ],
-   "must": [
+   "consignment": [
+      "1"
+   ],
+   "continue": [
       "4"
    ],
-   "re-evaluated": [
+   "continued": [
+      "1"
+   ],
+   "conversion": [
       "4"
    ],
-   "``": [
-      "4"
-   ],
-   "circumstances": [
-      "4"
-   ],
-   "time": [
-      "4"
-   ],
-   "determine": [
-      "4"
-   ],
-   "what": [
-      "4"
-   ],
-   "we": [
-      "4"
-   ],
-   "''": [
-      "4"
-   ],
-   "Arthur": [
-      "4"
-   ],
-   "Miller": [
-      "4"
-   ],
-   "Vice": [
-      "4"
-   ],
-   "President": [
-      "4"
-   ],
-   "Communications": [
-      "4"
-   ],
-   "when": [
-      "4"
-   ],
-   "asked": [
-      "4"
-   ],
-   "if": [
-      "4"
-   ],
-   "proceed": [
-      "4"
-   ],
-   "immediately": [
-      "4"
-   ],
-   "receives": [
-      "4"
-   ],
-   "'d": [
-      "4"
-   ],
-   "put": [
-      "4"
-   ],
-   "off": [
-      "4"
-   ],
-   "long": [
-      "4"
-   ],
-   "conceivably": [
+   "convertible": [
+      "1",
       "4"
    ],
    "could": [
       "4"
    ],
-   "Lawrence": [
+   "create": [
+      "3"
+   ],
+   "creditor": [
       "4"
    ],
-   "Cohn": [
+   "crop": [
+      "1"
+   ],
+   "cruzados": [
+      "1"
+   ],
+   "cumulative": [
+      "1"
+   ],
+   "currency": [
+      "1"
+   ],
+   "current": [
       "4"
    ],
-   "analyst": [
+   "currently": [
+      "1"
+   ],
+   "debt": [
       "4"
    ],
-   "Merrill": [
+   "delay": [
       "4"
    ],
-   "Lynch": [
+   "delivered": [
+      "1"
+   ],
+   "deposits": [
+      "3"
+   ],
+   "depressed": [
       "4"
    ],
-   "Pierce": [
+   "determine": [
       "4"
    ],
-   "Fenner": [
+   "dificulties": [
+      "1"
+   ],
+   "dilution": [
       "4"
    ],
-   "waits": [
+   "dlrs": [
+      "1",
+      "3",
       "4"
    ],
-   "show": [
+   "do": [
       "4"
    ],
-   "improved": [
+   "doubt": [
+      "1"
+   ],
+   "doubts": [
+      "1"
+   ],
+   "down": [
+      "4"
+   ],
+   "drought": [
+      "1"
+   ],
+   "dry": [
+      "1"
+   ],
+   "earlier": [
+      "1",
+      "4"
+   ],
+   "early": [
+      "1"
+   ],
+   "ease": [
+      "4"
+   ],
+   "effort": [
+      "3"
+   ],
+   "encompass": [
+      "4"
+   ],
+   "end": [
+      "1"
+   ],
+   "ended": [
+      "1"
+   ],
+   "ends": [
+      "1"
+   ],
+   "equities": [
+      "4"
+   ],
+   "equity": [
+      "4"
+   ],
+   "estimated": [
+      "1"
+   ],
+   "estimates": [
+      "1"
+   ],
+   "even": [
+      "4"
+   ],
+   "expect": [
+      "4"
+   ],
+   "expected": [
+      "1",
+      "4"
+   ],
+   "experiencing": [
+      "1"
+   ],
+   "export": [
+      "1"
+   ],
+   "exporters": [
+      "1"
+   ],
+   "factors": [
+      "4"
+   ],
+   "fails": [
+      "4"
+   ],
+   "falling": [
+      "4"
+   ],
+   "farmer-owned": [
+      "5"
+   ],
+   "farmers": [
+      "1"
+   ],
+   "fell": [
+      "4"
+   ],
+   "few": [
+      "1"
+   ],
+   "figures": [
+      "1"
+   ],
+   "filed": [
+      "3",
       "4"
    ],
    "financial": [
       "4"
    ],
-   "outlook": [
+   "fit": [
+      "1"
+   ],
+   "five-day": [
+      "5"
+   ],
+   "follows": [
+      "5"
+   ],
+   "for": [
+      "1",
       "4"
    ],
-   "Although": [
+   "foreign": [
       "4"
    ],
-   "specify": [
+   "form": [
+      "2"
+   ],
+   "going": [
+      "1"
+   ],
+   "gone": [
       "4"
    ],
-   "types": [
+   "good": [
+      "1"
+   ],
+   "hands": [
+      "1"
+   ],
+   "hang": [
       "4"
    ],
-   "equities": [
+   "harvesting": [
+      "1"
+   ],
+   "has": [
+      "1",
       "4"
    ],
-   "most": [
+   "have": [
+      "1",
       "4"
    ],
-   "believed": [
+   "having": [
+      "3"
+   ],
+   "held": [
+      "1"
+   ],
+   "holders": [
       "4"
    ],
-   "preferred": [
+   "holds": [
       "4"
    ],
-   "encompass": [
+   "how": [
+      "1"
+   ],
+   "however": [
+      "4"
+   ],
+   "humidity": [
+      "1"
+   ],
+   "hundred": [
+      "1"
+   ],
+   "if": [
+      "4"
+   ],
+   "immediate": [
+      "4"
+   ],
+   "immediately": [
+      "4"
+   ],
+   "improved": [
+      "4"
+   ],
+   "improving": [
+      "1"
+   ],
+   "in": [
+      "1",
+      "2",
+      "3",
+      "4"
+   ],
+   "included": [
+      "1"
+   ],
+   "industry": [
+      "4"
+   ],
+   "initial": [
+      "4"
+   ],
+   "interest": [
+      "2",
+      "4"
+   ],
+   "into": [
+      "4"
+   ],
+   "investment": [
+      "2"
+   ],
+   "is": [
+      "1",
+      "2",
+      "4"
+   ],
+   "issues": [
+      "4"
+   ],
+   "it": [
+      "1",
+      "3",
+      "4"
+   ],
+   "its": [
+      "1",
+      "4"
+   ],
+   "joint": [
+      "2"
+   ],
+   "july": [
+      "1"
+   ],
+   "kilos": [
+      "1"
+   ],
+   "large": [
+      "4"
+   ],
+   "largest": [
+      "3"
+   ],
+   "last": [
+      "1"
+   ],
+   "late": [
+      "1"
+   ],
+   "leading": [
       "4"
    ],
    "least": [
       "4"
    ],
-   "Such": [
+   "levels": [
+      "1"
+   ],
+   "light": [
+      "1"
+   ],
+   "likely": [
       "4"
    ],
-   "depressed": [
+   "limited": [
+      "1"
+   ],
+   "link": [
+      "3"
+   ],
+   "loans": [
+      "4"
+   ],
+   "long": [
+      "4"
+   ],
+   "longer": [
+      "4"
+   ],
+   "lose": [
+      "4"
+   ],
+   "losses": [
+      "4"
+   ],
+   "lower": [
+      "1",
+      "4"
+   ],
+   "made": [
+      "1"
+   ],
+   "major": [
+      "4"
+   ],
+   "making": [
+      "1"
+   ],
+   "manage": [
+      "2"
+   ],
+   "management": [
+      "2"
+   ],
+   "market": [
+      "2",
+      "4"
+   ],
+   "mean": [
+      "4"
+   ],
+   "means": [
+      "1"
+   ],
+   "midday": [
+      "1"
+   ],
+   "middlemen": [
+      "1"
+   ],
+   "minimizing": [
+      "4"
+   ],
+   "mln": [
+      "1",
+      "4"
+   ],
+   "money": [
+      "2"
+   ],
+   "more": [
+      "4"
+   ],
+   "most": [
+      "4"
+   ],
+   "much": [
+      "1",
+      "4"
+   ],
+   "must": [
+      "4"
+   ],
+   "named": [
+      "1"
+   ],
+   "national": [
+      "5"
+   ],
+   "near": [
+      "4"
+   ],
+   "nearby": [
+      "1"
+   ],
+   "nervous": [
+      "4"
+   ],
+   "network": [
+      "3"
+   ],
+   "news": [
+      "4"
+   ],
+   "no": [
+      "4"
+   ],
+   "normal": [
+      "1"
+   ],
+   "not": [
+      "1",
+      "4"
+   ],
+   "noted": [
+      "4"
+   ],
+   "now": [
+      "1",
+      "4"
+   ],
+   "obtaining": [
+      "1"
+   ],
+   "of": [
+      "1",
+      "2",
+      "3",
+      "4"
+   ],
+   "off": [
+      "4"
+   ],
+   "offer": [
+      "1",
+      "4"
+   ],
+   "offering": [
+      "4"
+   ],
+   "old": [
+      "1"
+   ],
+   "on": [
+      "1",
+      "4"
+   ],
+   "one": [
+      "4"
+   ],
+   "one-billion-dlr": [
+      "4"
+   ],
+   "only": [
+      "1"
+   ],
+   "open": [
+      "1"
+   ],
+   "operated": [
+      "2"
+   ],
+   "other": [
+      "4"
+   ],
+   "outlook": [
+      "4"
+   ],
+   "over": [
+      "1",
+      "4"
+   ],
+   "oversight": [
+      "2"
+   ],
+   "owns": [
+      "2"
+   ],
+   "part": [
+      "1",
+      "4"
+   ],
+   "payments": [
+      "4"
+   ],
+   "pays": [
+      "4"
+   ],
+   "pct": [
+      "2"
+   ],
+   "per": [
+      "1"
+   ],
+   "performance": [
+      "4"
+   ],
+   "period": [
+      "1"
+   ],
+   "plan": [
+      "2"
+   ],
+   "poor": [
+      "4"
+   ],
+   "portion": [
+      "4"
+   ],
+   "ports": [
+      "1"
+   ],
+   "potential": [
+      "4"
+   ],
+   "practically": [
+      "1"
+   ],
+   "preferred": [
+      "4"
+   ],
+   "pressure": [
       "4"
    ],
    "price": [
       "4",
       "5"
    ],
-   "mean": [
-      "4"
-   ],
-   "conversion": [
-      "4"
-   ],
-   "more": [
-      "4"
-   ],
-   "dilution": [
-      "4"
-   ],
-   "holders": [
-      "4"
-   ],
-   "noted": [
-      "4"
-   ],
-   "Daniel": [
-      "4"
-   ],
-   "Williams": [
-      "4"
-   ],
-   "Sutro": [
-      "4"
-   ],
-   "Group": [
-      "4"
-   ],
-   "Several": [
-      "4"
-   ],
-   "while": [
-      "4"
-   ],
-   "believe": [
-      "4"
+   "prices": [
+      "1"
    ],
    "problem": [
       "4"
    ],
-   "continue": [
+   "proceed": [
       "4"
    ],
-   "hang": [
+   "processors": [
+      "1"
+   ],
+   "proposed": [
       "4"
    ],
-   "industry": [
+   "prospects": [
+      "1"
+   ],
+   "published": [
+      "1"
+   ],
+   "put": [
+      "4"
+   ],
+   "quality": [
+      "1"
+   ],
+   "quarter": [
+      "4"
+   ],
+   "quickly": [
+      "4"
+   ],
+   "rate": [
+      "4"
+   ],
+   "re-evaluated": [
+      "4"
+   ],
+   "reaction": [
+      "4"
+   ],
+   "receives": [
+      "4"
+   ],
+   "recent": [
+      "1",
+      "4"
+   ],
+   "recommended": [
+      "4"
+   ],
+   "reduced": [
+      "4"
+   ],
+   "registered": [
+      "1"
+   ],
+   "reluctant": [
+      "1"
+   ],
+   "reported": [
+      "5"
+   ],
+   "reserve": [
+      "5"
+   ],
+   "restored": [
+      "1"
+   ],
+   "restructured": [
+      "4"
+   ],
+   "review": [
+      "1"
+   ],
+   "rose": [
+      "1"
+   ],
+   "said": [
+      "1",
+      "2",
+      "3",
+      "4"
+   ],
+   "sales": [
+      "1"
+   ],
+   "same": [
+      "1"
+   ],
+   "season": [
+      "1"
+   ],
+   "securities": [
+      "4"
+   ],
+   "seems": [
+      "1"
+   ],
+   "seen": [
+      "4"
+   ],
+   "sell": [
+      "4"
+   ],
+   "selling": [
+      "1"
+   ],
+   "service": [
+      "4"
+   ],
+   "shipment": [
+      "1"
+   ],
+   "shippers": [
+      "1"
+   ],
+   "shock": [
+      "4"
+   ],
+   "show": [
+      "4"
+   ],
+   "similar": [
+      "4"
+   ],
+   "since": [
+      "1"
+   ],
+   "sold": [
+      "1"
+   ],
+   "some": [
+      "1"
+   ],
+   "specify": [
+      "4"
+   ],
+   "spokesman": [
+      "4"
+   ],
+   "spot": [
+      "1"
+   ],
+   "stage": [
+      "1"
+   ],
+   "standing": [
+      "1",
+      "4"
+   ],
+   "stands": [
+      "4"
+   ],
+   "still": [
+      "1"
+   ],
+   "stock": [
+      "4"
+   ],
+   "stocks": [
+      "4"
+   ],
+   "subsidiary": [
+      "2"
+   ],
+   "superior+": [
+      "1"
+   ],
+   "suspended": [
+      "4"
+   ],
+   "takeover": [
+      "4"
+   ],
+   "taking": [
+      "4"
+   ],
+   "temporao": [
+      "1"
+   ],
+   "term": [
+      "4"
+   ],
+   "than": [
+      "4"
+   ],
+   "that": [
+      "1",
+      "4"
+   ],
+   "the": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+   ],
+   "their": [
+      "1"
+   ],
+   "there": [
+      "1"
+   ],
+   "they": [
+      "2",
+      "4"
+   ],
+   "this": [
+      "1",
+      "4"
+   ],
+   "thousand": [
+      "1"
+   ],
+   "threat": [
       "4"
    ],
    "through": [
       "4",
       "5"
    ],
-   "quarter": [
+   "throughout": [
+      "1"
+   ],
+   "time": [
       "4"
    ],
-   "initial": [
+   "times": [
+      "1"
+   ],
+   "to": [
+      "1",
+      "2",
+      "3",
       "4"
    ],
-   "shock": [
+   "tonne": [
+      "1"
+   ],
+   "total": [
+      "1"
+   ],
+   "traded": [
       "4"
    ],
-   "reaction": [
+   "types": [
       "4"
    ],
-   "likely": [
+   "under": [
+      "1",
+      "2",
       "4"
    ],
-   "ease": [
+   "up": [
       "4"
    ],
-   "Nevertheless": [
+   "venture": [
+      "2"
+   ],
+   "view": [
+      "1"
+   ],
+   "waits": [
       "4"
    ],
-   "holds": [
-      "4"
-   ],
-   "about": [
-      "4"
-   ],
-   "2.70": [
-      "4"
-   ],
-   "loans": [
-      "4"
-   ],
-   "stands": [
-      "4"
-   ],
-   "lose": [
-      "4"
-   ],
-   "15-20": [
-      "4"
-   ],
-   "rate": [
-      "4"
-   ],
-   "reduced": [
-      "4"
-   ],
-   "200": [
-      "4"
-   ],
-   "pays": [
-      "4"
-   ],
-   "Joseph": [
-      "4"
-   ],
-   "Arsenio": [
-      "4"
-   ],
-   "Birr": [
-      "4"
-   ],
-   "Wilson": [
-      "4"
-   ],
-   "He": [
-      "4"
-   ],
-   "however": [
-      "4"
-   ],
-   "any": [
-      "4"
-   ],
-   "potential": [
-      "4"
-   ],
-   "losses": [
-      "4"
-   ],
-   "current": [
-      "4"
-   ],
-   "even": [
-      "4"
-   ],
-   "fails": [
-      "4"
-   ],
-   "service": [
-      "4"
-   ],
-   "expect": [
-      "4"
-   ],
-   "restructured": [
-      "4"
-   ],
-   "similar": [
+   "was": [
+      "1",
       "4"
    ],
    "way": [
       "4"
    ],
-   "Mexico": [
+   "we": [
       "4"
    ],
-   "minimizing": [
+   "week": [
+      "1",
       "4"
    ],
-   "creditor": [
+   "weekly": [
+      "1"
+   ],
+   "weeks": [
+      "1",
       "4"
    ],
-   "Agriculture": [
-      "5"
+   "well": [
+      "4"
    ],
-   "Department": [
-      "5"
+   "went": [
+      "1"
    ],
-   "reported": [
-      "5"
+   "were": [
+      "1"
    ],
-   "farmer-owned": [
-      "5"
+   "what": [
+      "4"
    ],
-   "reserve": [
-      "5"
+   "when": [
+      "4"
    ],
-   "national": [
-      "5"
+   "which": [
+      "1",
+      "2",
+      "4"
    ],
-   "five-day": [
-      "5"
+   "while": [
+      "4"
    ],
-   "average": [
-      "5"
+   "will": [
+      "1",
+      "2",
+      "4"
    ],
-   "25": [
-      "5"
+   "with": [
+      "1",
+      "3",
+      "4"
    ],
-   "follows": [
-      "5"
+   "withdrawing": [
+      "4"
    ],
-   "(": [
-      "5"
+   "would": [
+      "1",
+      "3",
+      "4"
    ],
-   "Dlrs/Bu-Sorghum": [
-      "5"
+   "year": [
+      "1",
+      "4"
    ],
-   "Cwt": [
-      "5"
+   "yet": [
+      "4"
    ],
-   ")": [
-      "5"
-   ],
-   "-": [
-      "5"
-   ],
-   "Natl": [
-      "5"
+   "zone": [
+      "1"
    ]
 }

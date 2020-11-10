@@ -2,6 +2,7 @@ import argparse
 import json
 import re
 import os
+import collections
 
 data = []
 
@@ -40,16 +41,14 @@ def build_index(input_file, output_file):
             current_dictionary[term] = current_list
 
         if len(current_dictionary) == 500:
-            #sorted(current_dictionary)
-            print(current_dictionary)
+            # Create a dictionary with the correct order
+            sorted_dictionary = collections.OrderedDict(sorted(current_dictionary.items()))
             block_name = "BLOCK" + str(block_counter)
-            json.dump(current_dictionary, open(block_name, "w", encoding="utf-8"), indent=3)
+            json.dump(sorted_dictionary, open(block_name, "w", encoding="utf-8"), indent=3)
 
             block_counter = block_counter + 1
             current_dictionary.clear()
 
-            print("Current Dictionary: ")
-            print(current_dictionary)
             print("Current Block Counter: ")
             print(block_counter)
 
