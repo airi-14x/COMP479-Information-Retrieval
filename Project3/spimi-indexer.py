@@ -40,6 +40,7 @@ def build_index(input_file, output_file):
             current_dictionary[term] = current_list
 
         if len(current_dictionary) == 500:
+            #sorted(current_dictionary)
             print(current_dictionary)
             block_name = "BLOCK" + str(block_counter)
             json.dump(current_dictionary, open(block_name, "w", encoding="utf-8"), indent=3)
