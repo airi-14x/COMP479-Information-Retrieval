@@ -4,8 +4,6 @@ import re
 import os
 import collections
 
-data = []
-
 def build_index(input_file, output_file):
     lines = []
 
@@ -52,6 +50,35 @@ def build_index(input_file, output_file):
             print("Current Block Counter: ")
             print(block_counter)
 
+def create_final_index():
+    if not os.getcwd() == (os.getcwd() + "/BLOCKS"):
+        os.chdir(os.getcwd() + "/BLOCKS")
+
+    #print(os.chdir(".."))
+    # Get # of blocks in directory - 1 since we start at 0
+    files = os.listdir(os.getcwd())
+    current_block_number = 0
+    total_block_number = len(files) - 1
+    print(total_block_number)
+
+    current_dictionary = {}
+
+    while (current_block_number < total_block_number):
+        block_name = "BLOCK" + str(current_block_number)
+        with open(block_name) as file:
+            data = json.load(file)
+        current_dictionary = dict(current_dictionary, **data)
+        current_block_number = current_block_number + 1
+
+    #print(current_dictionary)
+
+    sorted_dictionary = collections.OrderedDict(sorted(current_dictionary.items()))
+    os.chdir("..")
+    json.dump(sorted_dictionary, open("sorted_dictionary.json", "w", encoding="utf-8"), indent=3)
+    #new_dictionary = json.loads("sorted_dictionary.json")
+    #print(new_dictionary)
+
+
 
 parser = argparse.ArgumentParser(
     description='Process input path parameter')
@@ -62,4 +89,5 @@ parser.add_argument('-o', '--output_file', type=str,
 #parser.add_argument('-q', '--query', type=str, default='!')
 
 args = parser.parse_args()
-build_index(args.input_file,args.output_file)
+#build_index(args.input_file,args.output_file)
+create_final_index()
