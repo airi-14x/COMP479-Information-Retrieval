@@ -2,7 +2,7 @@ import argparse
 import json
 import os
 import collections
-import operator
+from itertools import chain
 
 # Running: python3 spimi-indexer.py -i tokens.json
 def build_index(input_file, output_file):
@@ -96,11 +96,12 @@ def create_final_index():
     sorted_dictionary = collections.OrderedDict(sorted(current_dictionary.items()))
 
     for sorted_term, sorted_docID in sorted_dictionary.items():
-        sorted_docID = reduce(operator.add, sorted_docID)
+        sorted_docID = list(chain(*sorted_docID))
+        #sorted_docID = functools.reduce(operator.add, sorted_docID)
         sorted_dictionary[sorted_term] = sorted_docID
 
     os.chdir("..")
-    json.dump(sorted_dictionary, open("sorted_dictionary.json", "w", encoding="utf-8"), indent=3)
+    json.dump(sorted_dictionary, open("sorted_dictionary.json", "w", encoding="utf-8"))
     #new_dictionary = json.loads("sorted_dictionary.json")
     #print(new_dictionary)
 
