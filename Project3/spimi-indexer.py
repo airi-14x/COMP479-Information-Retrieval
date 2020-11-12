@@ -1,9 +1,10 @@
 import argparse
 import json
-import re
 import os
 import collections
+import operator
 
+# Running: python3 spimi-indexer.py -i tokens.json
 def build_index(input_file, output_file):
     lines = []
 
@@ -63,16 +64,41 @@ def create_final_index():
 
     current_dictionary = {}
 
+    #while (current_block_number < total_block_number):
     while (current_block_number < total_block_number):
         block_name = "BLOCK" + str(current_block_number)
+
         with open(block_name) as file:
             data = json.load(file)
-        current_dictionary = dict(current_dictionary, **data)
+
+        if len(current_dictionary) == 0:
+            current_dictionary = dict(current_dictionary, **data)
+        else:
+            # Iterate through dictionary
+            #print(data)
+
+            for term, docID in data.items():
+                if term in current_dictionary:
+                    #print("Term is exists: " + term)
+                    current_doc_ids = current_dictionary[term]
+                    #print("Current docID: " + str(current_doc_ids))
+                    current_doc_ids.append(docID)
+                    current_dictionary[term] = current_doc_ids
+                    #print("Updated docID: " + str(current_dictionary[term]))
+                else:
+                    current_dictionary[term] = docID
+                #print(term)
+                #print(docID)
         current_block_number = current_block_number + 1
 
     #print(current_dictionary)
 
     sorted_dictionary = collections.OrderedDict(sorted(current_dictionary.items()))
+
+    for sorted_term, sorted_docID in sorted_dictionary.items():
+        sorted_docID = reduce(operator.add, sorted_docID)
+        sorted_dictionary[sorted_term] = sorted_docID
+
     os.chdir("..")
     json.dump(sorted_dictionary, open("sorted_dictionary.json", "w", encoding="utf-8"), indent=3)
     #new_dictionary = json.loads("sorted_dictionary.json")
