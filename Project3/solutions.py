@@ -1,3 +1,4 @@
+import time
 
 def block_reader(path):
     import os
@@ -127,6 +128,7 @@ def block_sorter(INPUT_STRUCTURE):
         yield json.dumps(index)
 
     else:
+        t0 = time.time()
         for token in INPUT_STRUCTURE:
             data.append(token)
         sorted_list = sorted(set(map(tuple, data)),
@@ -150,7 +152,10 @@ def block_sorter(INPUT_STRUCTURE):
         with open("index.json", 'w') as file:
             json.dump(index, file)
 
+        t1 = time.time()
+        total = t1 - t0
 
+        print("Total Time (Build Naive Index): " + str(total))    
 
 
         #yield json.dumps(index)
