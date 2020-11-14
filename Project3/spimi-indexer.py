@@ -103,7 +103,7 @@ def create_final_index():
 
     os.chdir("..")
     json.dump(sorted_dictionary, open(
-        "sorted_dictionary.json", "w", encoding="utf-8"))
+        "index.json", "w", encoding="utf-8"))
     t1 = time.time()
     total = t1 - t0
 
