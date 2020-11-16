@@ -6,7 +6,6 @@ from itertools import chain
 import time
 
 # python3 spimi-indexer.py -i tokens.json
-
 def build_index_block(input_file, output_file):
     t0 = time.time()
     lines = []
