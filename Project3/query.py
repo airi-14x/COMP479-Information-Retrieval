@@ -1,5 +1,6 @@
 import argparse
 import json
+import collections
 
 
 def query(input_file, output_file, query):
@@ -30,11 +31,18 @@ def query(input_file, output_file, query):
             for term, docID in data.items():
                 if query_term == term:
                     print("Found Result for query term '" + term + "'!")
-                    results[query_term] = docID
+                    if len(results) > 0:  # Non-empty dictionary aka we have docID stored
+                        current_doc_id = results[query]
+                        for single_docID in docID:
+                            if single_docID not in current_doc_id:
+                                current_doc_id.append(single_docID)
+                    else:
+                        results[query] = docID
 
-        #for result_term, result_docID in results.items():
-            #if result_
-
+        # Final sorting
+        results[query] = [int(x) for x in results[query]]
+        results[query].sort()
+        print(results)
 
     if len(results) == 0:
         print("Result for query term '" + query + "' cannot be found!")
