@@ -24,6 +24,23 @@ def query(input_file, output_file, query):
 
     elif "and" in queries:
         print("Running AND query")
+        final_result = {}
+        for query_term in queries:
+            for term, docID in data.items():
+                if query_term == term and not query_term == "and":
+                    print("Found Result for query term '" + term + "'!")
+                    if len(results) > 0:
+                        current_doc_id = results[query]
+                        for single_docID in docID:
+                            if single_docID in current_doc_id:
+                                final_result.append(single_docID)
+                        print(final_result)
+                        result[query] = final_result
+                        final_result.clear()
+
+                    elif not query_term == "and":
+                        results[query] = docID
+
     else:
         print("Running OR query")
 
@@ -31,11 +48,12 @@ def query(input_file, output_file, query):
             for term, docID in data.items():
                 if query_term == term:
                     print("Found Result for query term '" + term + "'!")
-                    if len(results) > 0:  # Non-empty dictionary aka we have docID stored
+                    if len(results) > 0:  # Non-empty dictionary aka we have docID stored (next term - docID to check)
                         current_doc_id = results[query]
                         for single_docID in docID:
-                            if single_docID not in current_doc_id:
+                            if single_docID not in current_doc_id: #Not adding duplicate
                                 current_doc_id.append(single_docID)
+                        results[query] = current_doc_id #Update with new DocIDs
                     else:
                         results[query] = docID
 
