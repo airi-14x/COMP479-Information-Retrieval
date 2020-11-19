@@ -11,5 +11,5 @@ Projects for COMP 479: Information Retrieval And Web Search
 	* As for creating a compressed index, numbers were removed, it was case-folded and the stopwords were removed.
 	
 * Project #3 - Created an index via SPIMI. Single term querying processor and OR query processor was implemented. 
-	* Partially implement: AND query processor.
+	* Partially implemented: AND query processor.
 	* Due to lack of time as well as having surgery, ranking was not implemented and the AND query processor.
